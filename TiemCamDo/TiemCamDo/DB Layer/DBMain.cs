@@ -10,7 +10,16 @@ namespace TiemCamDo.DB_Layer
 {
     class DBMain
     {
-        string ConnStr = @"Data Source=DESKTOP-GB9BOU0\SQLEXPRESS;" +
+        private static DBMain instance;
+        public static DBMain Instance
+        {
+            get {if (instance == null) instance = new DBMain(); return DBMain.instance; }
+            private set { DBMain.instance = value; }
+        }
+
+        private DBMain() { }
+
+        string ConnStr = @"Data Source=DESKTOP-GB9BOU0\SQLEXPRESS2012;" +
         "Initial Catalog=CamDo;" +
         "Integrated Security=True";
        public DataTable MyExecuteQuery(string query)
