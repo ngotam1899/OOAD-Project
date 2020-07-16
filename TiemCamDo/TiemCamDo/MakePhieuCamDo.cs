@@ -14,9 +14,6 @@ namespace TiemCamDo
 {
     public partial class MakePhieuCamDo : Form
     {
-        BLKhachHang kh = new BLKhachHang();
-        BLCamDo cd = new BLCamDo();
-        BLMatHang mh = new BLMatHang();
         bool Them;
         string MaNV;
         public MakePhieuCamDo()
@@ -39,7 +36,7 @@ namespace TiemCamDo
 
         private void MakePhieuCamDo_Load(object sender, EventArgs e)
         {
-            dgvKhachHang.DataSource = kh.GetKH();
+            dgvKhachHang.DataSource = BLKhachHang.Instance.GetKH();
             dgvKhachHang.AllowUserToAddRows = false;
             dgvKhachHang.ReadOnly = true;
             btnThemMH.Enabled = false;
@@ -53,10 +50,10 @@ namespace TiemCamDo
             {
                 try
                 {
-                    if (kh.InsertKH(txtCMND.Text, txtTenKH.Text, txtDiaChi.Text, txtSoDT.Text, dtpNgaySinh.Value.Date, txtNoiCap.Text, (rdbNam.Checked) ? "Nam" : "Nữ"))
+                    if (BLKhachHang.Instance.InsertKH(txtCMND.Text, txtTenKH.Text, txtDiaChi.Text, txtSoDT.Text, dtpNgaySinh.Value.Date, txtNoiCap.Text, (rdbNam.Checked) ? "Nam" : "Nữ"))
                     {
                         // Load lại dữ liệu trên DataGridView     
-                        dgvKhachHang.DataSource = kh.GetKH();
+                        dgvKhachHang.DataSource = BLKhachHang.Instance.GetKH();
                         //// Không cho thao tác trên các nút Lưu / Hủy
                         // Thông báo         
                         MessageBox.Show("Đã thêm xong!");

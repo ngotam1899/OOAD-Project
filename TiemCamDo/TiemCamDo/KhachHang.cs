@@ -15,7 +15,6 @@ namespace TiemCamDo
 {
     public partial class KhachHang : Form
     {
-        BLKhachHang kh = new BLKhachHang();
         bool Them;
         string MaNV;
         bool IsAdmin;
@@ -46,7 +45,7 @@ namespace TiemCamDo
         }
         private void KhachHang_Load(object sender, EventArgs e)
         {
-            dgvKH.DataSource = kh.GetKH();
+            dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.AllowUserToAddRows = false;
             dgvKH.ReadOnly = true;
             rdbSDT.Checked = true;
@@ -68,11 +67,11 @@ namespace TiemCamDo
             resettext();
             if (rdbSDT.Checked) //tìm theo mã SV
             {
-                dgvKH.DataSource = kh.SearchKHBySDT(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHBySDT(txtSearch.Text.Trim());
             }
             else   //tìm theo Họ Tên SV
             {
-                dgvKH.DataSource = kh.SearchKHByTen(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
             }           
         }
 
@@ -102,10 +101,10 @@ namespace TiemCamDo
                 {
                     try
                     {
-                        if (kh.InsertKH(txtCMND.Text, txtHoTen.Text, txtDiaChi.Text,txtSDT.Text, dtpNgaySinh.Value.Date, txtNoiCap.Text, (rdbNam.Checked) ? "Nam" : "Nữ"))
+                        if (BLKhachHang.Instance.InsertKH(txtCMND.Text, txtHoTen.Text, txtDiaChi.Text,txtSDT.Text, dtpNgaySinh.Value.Date, txtNoiCap.Text, (rdbNam.Checked) ? "Nam" : "Nữ"))
                         {
                             // Load lại dữ liệu trên DataGridView     
-                            dgvKH.DataSource = kh.GetKH();
+                            dgvKH.DataSource = BLKhachHang.Instance.GetKH();
                             Enabletxt(false);
                             resettext();
                             //// Không cho thao tác trên các nút Lưu / Hủy
@@ -130,10 +129,10 @@ namespace TiemCamDo
             }
             else
             {
-                if (kh.UpdateKH(txtCMND.Text, txtHoTen.Text, txtDiaChi.Text, txtSDT.Text, dtpNgaySinh.Value.Date, txtNoiCap.Text, (rdbNam.Checked) ? "Nam" : "Nữ"))
+                if (BLKhachHang.Instance.UpdateKH(txtCMND.Text, txtHoTen.Text, txtDiaChi.Text, txtSDT.Text, dtpNgaySinh.Value.Date, txtNoiCap.Text, (rdbNam.Checked) ? "Nam" : "Nữ"))
                 {
                     // Load lại dữ liệu trên DataGridView      
-                    dgvKH.DataSource = kh.GetKH();
+                    dgvKH.DataSource = BLKhachHang.Instance.GetKH();
                     Enabletxt(false);
                     resettext();
                     //// Không cho thao tác trên các nút Lưu / Hủy
@@ -187,10 +186,10 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (kh.DeleteKH(str))
+                    if (BLKhachHang.Instance.DeleteKH(str))
                     {
                         // Cập nhật lại DataGridView                
-                        dgvKH.DataSource = kh.GetKH();
+                        dgvKH.DataSource = BLKhachHang.Instance.GetKH();
                         Enabletxt(false);
                         resettext();
                         //// Không cho thao tác trên các nút Lưu / Hủy

@@ -10,6 +10,13 @@ namespace TiemCamDo.BD_Layer
 {
     class BLTraGop
     {
+        private static BLTraGop instance;
+        public static BLTraGop Instance
+        {
+            get { if (instance == null) instance = new BLTraGop(); return BLTraGop.instance; }
+            private set { BLTraGop.instance = value; }
+        }
+        private BLTraGop() { }
         public DataTable GetTraGopByMaPhieuCam(string MaPhieu)
         {
             string sqlString = string.Format("EXEC spLoadTraGopByCamDo N'{0}'", MaPhieu);

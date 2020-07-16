@@ -10,6 +10,13 @@ namespace TiemCamDo.BD_Layer
 {
     class BLMatHang
     {
+        private static BLMatHang instance;
+        public static BLMatHang Instance
+        {
+            get { if (instance == null) instance = new BLMatHang(); return BLMatHang.instance; }
+            private set { BLMatHang.instance = value; }
+        }
+        private BLMatHang() { }
         public DataTable GetMH()
         {
             string sqlString = string.Format("EXEC spLoadMatHang");

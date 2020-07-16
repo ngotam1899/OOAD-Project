@@ -10,6 +10,13 @@ namespace TiemCamDo.BD_Layer
 {
     class BLThongKe
     {
+        private static BLThongKe instance;
+        public static BLThongKe Instance
+        {
+            get { if (instance == null) instance = new BLThongKe(); return BLThongKe.instance; }
+            private set { BLThongKe.instance = value; }
+        }
+        private BLThongKe() { }
         public DataTable GetThongKe(DateTime NgayBatDau, DateTime NgayKetThuc)
         {
             string sqlString = string.Format("EXEC spThongKePhieuCamDo  N'{0}', N'{1}'", NgayBatDau, NgayKetThuc);

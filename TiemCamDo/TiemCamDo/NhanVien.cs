@@ -15,7 +15,6 @@ namespace TiemCamDo
 {
     public partial class NhanVien : Form
     {
-        BLNhanVien nv = new BLNhanVien();
         bool Them;
         string MaNV;
         bool IsAdmin;
@@ -49,7 +48,7 @@ namespace TiemCamDo
         }
         private void QuanLy_Load(object sender, EventArgs e)
         {
-            dgvNV.DataSource = nv.GetNV();
+            dgvNV.DataSource = BLNhanVien.Instance.GetNV();
             dgvNV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvNV.AllowUserToAddRows = false;
             dgvNV.ReadOnly = true;
@@ -115,10 +114,10 @@ namespace TiemCamDo
                 {
                     try
                     {
-                        if (nv.InsertNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, txtGioiTinh.Text, txtSoDT.Text, txtDiaChi.Text, txtQuyen.Text))
+                        if (BLNhanVien.Instance.InsertNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, txtGioiTinh.Text, txtSoDT.Text, txtDiaChi.Text, txtQuyen.Text))
                         {
                             // Load lại dữ liệu trên DataGridView     
-                            dgvNV.DataSource = nv.GetNV();
+                            dgvNV.DataSource = BLNhanVien.Instance.GetNV();
                             Enabletxt(false);
                             resettext();
                             //// Không cho thao tác trên các nút Lưu / Hủy
@@ -142,10 +141,10 @@ namespace TiemCamDo
             }
             else
             {
-                if (nv.UpdateNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, txtGioiTinh.Text, txtSoDT.Text, txtDiaChi.Text, txtQuyen.Text))
+                if (BLNhanVien.Instance.UpdateNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, txtGioiTinh.Text, txtSoDT.Text, txtDiaChi.Text, txtQuyen.Text))
                 {
                     // Load lại dữ liệu trên DataGridView      
-                    dgvNV.DataSource = nv.GetNV();
+                    dgvNV.DataSource = BLNhanVien.Instance.GetNV();
                     Enabletxt(false);
                     resettext();
                     //// Không cho thao tác trên các nút Lưu / Hủy
@@ -181,10 +180,10 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (nv.DeleteNV(str))
+                    if (BLNhanVien.Instance.DeleteNV(str))
                     {
                         // Cập nhật lại DataGridView                
-                        dgvNV.DataSource = nv.GetNV();
+                        dgvNV.DataSource = BLNhanVien.Instance.GetNV();
                         Enabletxt(false);
                         resettext();
                         //// Không cho thao tác trên các nút Lưu / Hủy
@@ -228,11 +227,11 @@ namespace TiemCamDo
             resettext();
             if (rdbSDT.Checked) //tìm theo mã SV
             {
-                dgvNV.DataSource = nv.SearchNVBySDT(txtSearch.Text.Trim());
+                dgvNV.DataSource = BLNhanVien.Instance.SearchNVBySDT(txtSearch.Text.Trim());
             }
             else   //tìm theo Họ Tên SV
             {
-                dgvNV.DataSource = nv.SearchNVByTen(txtSearch.Text.Trim());
+                dgvNV.DataSource = BLNhanVien.Instance.SearchNVByTen(txtSearch.Text.Trim());
             }
         }
 

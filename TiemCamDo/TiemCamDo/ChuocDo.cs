@@ -14,10 +14,6 @@ namespace TiemCamDo
 {
     public partial class ChuocDo : Form
     {
-        BLKhachHang kh = new BLKhachHang();
-        BLCamDo cd = new BLCamDo();
-        BLMatHang mh = new BLMatHang();
-        BLChuocDo chd = new BLChuocDo();
         bool Them;
         string MaNV;
         bool IsAdmin;
@@ -51,13 +47,13 @@ namespace TiemCamDo
             int r = dgvKH.CurrentCell.RowIndex;
             txtCMND.Text = dgvKH.Rows[r].Cells["CMND"].Value.ToString();
             txtTen.Text = dgvKH.Rows[r].Cells["Họ và tên"].Value.ToString();
-            dgvCamDo.DataSource = cd.GetCDByCMND(txtCMND.Text);
+            dgvCamDo.DataSource = BLCamDo.Instance.GetCDByCMND(txtCMND.Text);
 
         }
 
         private void ChuocDo_Load(object sender, EventArgs e)
         {
-            dgvKH.DataSource = kh.GetKH();
+            dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.ReadOnly = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //dgvChuocDo.DataSource=chd.GetPhieuChuoc();
@@ -89,7 +85,7 @@ namespace TiemCamDo
                 this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["Ngày cầm đồ"].Value.ToString();
                 this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["Số tiền cầm"].Value.ToString();
                 txtChiTiet.Text = dgvCamDo.Rows[r].Cells["Tên món hàng"].Value.ToString();
-                dgvMonHang.DataSource = chd.GetChDByMaPhieu(txtMaPhieu.Text);
+                dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
             }
             catch { }
         }
@@ -115,10 +111,10 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (chd.DeleteChD(str))
+                    if (BLChuocDo.Instance.DeleteChD(str))
                     {
                         // Cập nhật lại DataGridView                
-                        dgvMonHang.DataSource = chd.GetChDByMaPhieu(txtMaPhieu.Text);
+                        dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
                         Enabletxt(false);
                         resettext();
                         //// Không cho thao tác trên các nút Lưu / Hủy
@@ -152,10 +148,10 @@ namespace TiemCamDo
                 {
                     try
                     {
-                        if (chd.InsertChD(txtMaPhieuChuoc.Text, dtpNgayChuoc.Value, txtSoTienChuoc.Text, txtMaPhieu.Text,MaNV))
+                        if (BLChuocDo.Instance.InsertChD(txtMaPhieuChuoc.Text, dtpNgayChuoc.Value, txtSoTienChuoc.Text, txtMaPhieu.Text,MaNV))
                         {
                             // Load lại dữ liệu trên DataGridView     
-                            dgvMonHang.DataSource = chd.GetChDByMaPhieu(txtMaPhieu.Text);
+                            dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
                             Enabletxt(false);
                             resettext();
                             //// Không cho thao tác trên các nút Lưu / Hủy
@@ -180,10 +176,10 @@ namespace TiemCamDo
             }
             else
             {
-                if (chd.UpdateChD(txtMaPhieuChuoc.Text, dtpNgayChuoc.Value, txtSoTienChuoc.Text, txtMaPhieu.Text,MaNV))
+                if (BLChuocDo.Instance.UpdateChD(txtMaPhieuChuoc.Text, dtpNgayChuoc.Value, txtSoTienChuoc.Text, txtMaPhieu.Text,MaNV))
                 {
                     // Load lại dữ liệu trên DataGridView      
-                    dgvMonHang.DataSource = chd.GetChDByMaPhieu(txtMaPhieu.Text);
+                    dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
                     Enabletxt(false);
                     resettext();
                     //// Không cho thao tác trên các nút Lưu / Hủy
@@ -295,11 +291,11 @@ namespace TiemCamDo
             resettext();
             if (rdbSDT.Checked) //tìm theo mã SV
             {
-                dgvKH.DataSource = kh.SearchKHBySDT(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHBySDT(txtSearch.Text.Trim());
             }
             else   //tìm theo Họ Tên SV
             {
-                dgvKH.DataSource = kh.SearchKHByTen(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
             }
         }
     }

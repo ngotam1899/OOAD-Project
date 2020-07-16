@@ -10,6 +10,13 @@ namespace TiemCamDo.BD_Layer
 {
     class BLCamDo
     {
+        private static BLCamDo instance;
+        public static BLCamDo Instance
+        {
+            get { if (instance == null) instance = new BLCamDo(); return BLCamDo.instance; }
+            private set { BLCamDo.instance = value; }
+        }
+        private BLCamDo() { }
         public DataTable GetCDByCMND(string CMND)
         {
             string sqlString = string.Format("EXEC spLoadCamDoByMaKH N'{0}'", CMND);

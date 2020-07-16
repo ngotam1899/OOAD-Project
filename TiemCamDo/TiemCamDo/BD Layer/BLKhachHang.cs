@@ -10,6 +10,14 @@ namespace TiemCamDo.BD_Layer
 {
     class BLKhachHang
     {
+        private static BLKhachHang instance;
+        public static BLKhachHang Instance
+        {
+            get { if (instance == null) instance = new BLKhachHang(); return BLKhachHang.instance; }
+            private set { BLKhachHang.instance = value; }
+        }
+        private BLKhachHang() { }
+
         public DataTable GetKH()
         {
             string sqlString = "EXEC spLoadKhachHang";

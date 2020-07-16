@@ -10,7 +10,13 @@ namespace TiemCamDo.BD_Layer
 {
     class BLChuocDo
     {
-
+        private static BLChuocDo instance;
+        public static BLChuocDo Instance
+        {
+            get { if (instance == null) instance = new BLChuocDo(); return BLChuocDo.instance; }
+            private set { BLChuocDo.instance = value; }
+        }
+        private BLChuocDo() { }
         public DataTable GetChDByMaPhieu(string MaHang)
         {
             string sqlString = string.Format("EXEC spLoadChuocDoByCamDo N'{0}'", MaHang);

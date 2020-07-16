@@ -14,7 +14,6 @@ namespace TiemCamDo
     public partial class Login : Form
     {
         string MaNV;
-        BLNhanVien nv = new BLNhanVien();
         bool IsAdmin=true;
         public Login()
         {
@@ -70,7 +69,7 @@ namespace TiemCamDo
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (nv.IsUser(txtUsername.Text, txtPassword.Text, rbAdmin.Checked ? "Admin" : "NhanVien"))
+            if (BLNhanVien.Instance.IsUser(txtUsername.Text, txtPassword.Text, rbAdmin.Checked ? "Admin" : "NhanVien"))
             {
                 MessageBox.Show("Đăng nhập vào hệ thống !", "Thông báo !");
                 MaNV = txtUsername.Text;

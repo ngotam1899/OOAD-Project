@@ -10,6 +10,14 @@ namespace TiemCamDo.BD_Layer
 {
     class BLNhanVien
     {
+        private static BLNhanVien instance;
+        public static BLNhanVien Instance
+        {
+            get { if (instance == null) instance = new BLNhanVien(); return BLNhanVien.instance; }
+            private set { BLNhanVien.instance = value; }
+        }
+        private BLNhanVien() { }
+
         public DataTable GetNV()
         {
             string sqlString = string.Format("EXEC spLoadNhanVien");
@@ -23,8 +31,7 @@ namespace TiemCamDo.BD_Layer
         }
         public bool InsertNV(string MaNV, string Email, string MatKhau, string Ten, string GioiTinh, string SoDT, string DiaChi, string Quyen)
         {
-            string sqlString =
-           string.Format("EXEC spInsertNhanVien N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}' ,N'{6}', N'{7}'", MaNV, Email, MatKhau, Ten, GioiTinh, SoDT, DiaChi, Quyen);
+            string sqlString = string.Format("EXEC spInsertNhanVien N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}' ,N'{6}', N'{7}'", MaNV, Email, MatKhau, Ten, GioiTinh, SoDT, DiaChi, Quyen);
             int result = DBMain.Instance.MyExecuteNonQuery(sqlString);
             return result > 0;
         }
@@ -43,7 +50,6 @@ namespace TiemCamDo.BD_Layer
         }
         public DataTable SearchNVBySDT(string SDT)
         {
-
             string sqlString =
             string.Format("EXEC spSearchNhanVienBySDT N'%{0}%'", SDT);
             return DBMain.Instance.MyExecuteQuery(sqlString);

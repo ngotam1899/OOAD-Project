@@ -14,10 +14,6 @@ namespace TiemCamDo
 {
     public partial class TraGop : Form
     {
-        BLKhachHang kh = new BLKhachHang();
-        BLCamDo cd = new BLCamDo();
-        BLMatHang mh = new BLMatHang();
-        BLTraGop tl = new BLTraGop();
         bool Them;
         string MaNV;
         bool IsAdmin;
@@ -89,10 +85,10 @@ namespace TiemCamDo
                 if ((!txtMaTraGop.Text.Trim().Equals("")))
                 {
                     
-                        if (tl.InsertTraGop(txtMaTraGop.Text, dtpNgayTraGop.Value, txtTienTraGop.Text, txtTienDuNo.Text, txtMaPhieu.Text, MaNV))
+                        if (BLTraGop.Instance.InsertTraGop(txtMaTraGop.Text, dtpNgayTraGop.Value, txtTienTraGop.Text, txtTienDuNo.Text, txtMaPhieu.Text, MaNV))
                         {
                             // Load lại dữ liệu trên DataGridView     
-                            dgvTraGop.DataSource = tl.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
+                            dgvTraGop.DataSource = BLTraGop.Instance.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
                             Enabletxt(false);
                             resettext();
                             //// Không cho thao tác trên các nút Lưu / Hủy
@@ -114,10 +110,10 @@ namespace TiemCamDo
             }
             else
             {
-                if (tl.UpdateTraGop(txtMaTraGop.Text, dtpNgayTraGop.Value, txtTienTraGop.Text,txtTienDuNo.Text, txtMaPhieu.Text, MaNV))
+                if (BLTraGop.Instance.UpdateTraGop(txtMaTraGop.Text, dtpNgayTraGop.Value, txtTienTraGop.Text,txtTienDuNo.Text, txtMaPhieu.Text, MaNV))
                 {
                     // Load lại dữ liệu trên DataGridView      
-                    dgvTraGop.DataSource = tl.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
+                    dgvTraGop.DataSource = BLTraGop.Instance.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
                     Enabletxt(false);
                     resettext();
                     //// Không cho thao tác trên các nút Lưu / Hủy
@@ -172,10 +168,10 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (tl.DeleteTraGop(str))
+                    if (BLTraGop.Instance.DeleteTraGop(str))
                     {
                         // Cập nhật lại DataGridView                
-                        dgvTraGop.DataSource = tl.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
+                        dgvTraGop.DataSource = BLTraGop.Instance.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
                         Enabletxt(false);
                         resettext();
                         //// Không cho thao tác trên các nút Lưu / Hủy
@@ -203,7 +199,7 @@ namespace TiemCamDo
 
         private void TraGop_Load(object sender, EventArgs e)
         {
-            dgvKH.DataSource = kh.GetKH();
+            dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.ReadOnly = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             //dgvChuocDo.DataSource=chd.GetPhieuChuoc();
@@ -231,7 +227,7 @@ namespace TiemCamDo
         {
             int r = dgvKH.CurrentCell.RowIndex;
             txtCMND.Text = dgvKH.Rows[r].Cells["CMND"].Value.ToString();
-            dgvCamDo.DataSource = cd.GetCDByCMND(txtCMND.Text);
+            dgvCamDo.DataSource = BLCamDo.Instance.GetCDByCMND(txtCMND.Text);
         }
 
         private void dgvCamDo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -242,7 +238,7 @@ namespace TiemCamDo
                 this.txtMaPhieu.Text = dgvCamDo.Rows[r].Cells["Mã phiếu cầm"].Value.ToString();
                 this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["Ngày cầm đồ"].Value.ToString();
                 this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["Số tiền cầm"].Value.ToString();
-                dgvTraGop.DataSource = tl.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
+                dgvTraGop.DataSource = BLTraGop.Instance.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
                 txtTenMon.Text = dgvCamDo.Rows[r].Cells["Tên món hàng"].Value.ToString();
                 txtTienDuNo.Text = dgvCamDo.Rows[r].Cells["Số tiền dư nợ"].Value.ToString();
                 this.txtMaHang.Text = dgvCamDo.Rows[r].Cells["Mã hàng"].Value.ToString();
@@ -276,11 +272,11 @@ namespace TiemCamDo
             resettext();
             if (rdbSDT.Checked) //tìm theo mã SV
             {
-                dgvKH.DataSource = kh.SearchKHBySDT(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHBySDT(txtSearch.Text.Trim());
             }
             else   //tìm theo Họ Tên SV
             {
-                dgvKH.DataSource = kh.SearchKHByTen(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
             }
         }
 

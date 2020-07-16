@@ -14,9 +14,6 @@ namespace TiemCamDo
 {
     public partial class CamDo : Form
     {
-        BLKhachHang kh = new BLKhachHang();
-        BLCamDo cd = new BLCamDo();
-        BLMatHang mh = new BLMatHang();
         bool Them;
         string MaNV;
         bool IsAdmin;
@@ -56,7 +53,7 @@ namespace TiemCamDo
         }
         private void CamDo_Load(object sender, EventArgs e)
         {
-            dgvKH.DataSource = kh.GetKH();
+            dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.AllowUserToAddRows = false;
             dgvKH.ReadOnly = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -105,12 +102,12 @@ namespace TiemCamDo
                 {
                     //try
                     //{
-                        if (mh.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
+                        if (BLMatHang.Instance.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                         {
-                            cd.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text, MaNV);
+                            BLCamDo.Instance.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text, MaNV);
                             // Load lại dữ liệu trên DataGridView     
-                            dgvCamDo.DataSource = cd.GetCDByMaHang(txtMaHang.Text);
-                            dgvMonHang.DataSource = mh.GetMHByCMND(txtCMND.Text);
+                            dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
+                            dgvMonHang.DataSource = BLMatHang.Instance.GetMHByCMND(txtCMND.Text);
                             Enabletxt(false);
                             resettext();
                             //// Không cho thao tác trên các nút Lưu / Hủy
@@ -135,12 +132,12 @@ namespace TiemCamDo
             }
             else
             {
-                if (cd.UpdateCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text, MaNV)
-                    && mh.UpdateMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
+                if (BLCamDo.Instance.UpdateCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text, MaNV)
+                    && BLMatHang.Instance.UpdateMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                 {
                     // Load lại dữ liệu trên DataGridView      
-                    dgvCamDo.DataSource = cd.GetCDByMaHang(txtMaHang.Text);
-                    dgvMonHang.DataSource = mh.GetMHByCMND((txtCMND.Text));
+                    dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
+                    dgvMonHang.DataSource = BLMatHang.Instance.GetMHByCMND((txtCMND.Text));
                     Enabletxt(false);
                     resettext();
                     //// Không cho thao tác trên các nút Lưu / Hủy
@@ -211,10 +208,10 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (cd.DeleteCD(str))
+                    if (BLCamDo.Instance.DeleteCD(str))
                     {
                         // Cập nhật lại DataGridView                
-                        dgvCamDo.DataSource = cd.GetCDByMaHang(txtMaHang.Text);
+                        dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
                         Enabletxt(false);
                         resettext();
                         //// Không cho thao tác trên các nút Lưu / Hủy
@@ -256,11 +253,11 @@ namespace TiemCamDo
             resettext();
             if (rdbSDT.Checked) //tìm theo mã SV
             {
-                dgvKH.DataSource = kh.SearchKHBySDT(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHBySDT(txtSearch.Text.Trim());
             }
             else   //tìm theo Họ Tên SV
             {
-                dgvKH.DataSource = kh.SearchKHByTen(txtSearch.Text.Trim());
+                dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
             }
         }
 
@@ -277,7 +274,7 @@ namespace TiemCamDo
         {
             int r = dgvKH.CurrentCell.RowIndex;
             txtCMND.Text = dgvKH.Rows[r].Cells["CMND"].Value.ToString();
-            dgvMonHang.DataSource = mh.GetMHByCMND(txtCMND.Text);
+            dgvMonHang.DataSource = BLMatHang.Instance.GetMHByCMND(txtCMND.Text);
         }
 
         private void dgvCamDo_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -298,7 +295,7 @@ namespace TiemCamDo
             txtChiTiet.Text = dgvMonHang.Rows[r].Cells["Tên món hàng"].Value.ToString();
             txtCMND.Text = dgvMonHang.Rows[r].Cells["CMND"].Value.ToString();
             txtGiaTri.Text = dgvMonHang.Rows[r].Cells["Gía trị thực"].Value.ToString();
-            dgvCamDo.DataSource = cd.GetCDByMaHang(txtMaHang.Text);
+            dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
         }
 
         private void btnXuat_Click(object sender, EventArgs e)

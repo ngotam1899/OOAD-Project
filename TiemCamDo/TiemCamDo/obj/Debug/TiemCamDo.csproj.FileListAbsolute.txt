@@ -126,3 +126,4 @@ C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\De
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.exe
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.pdb
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\bin\Debug\TiemCamDo.pdb
+C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.csprojAssemblyReference.cache

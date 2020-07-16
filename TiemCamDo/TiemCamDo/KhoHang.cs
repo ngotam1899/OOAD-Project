@@ -16,7 +16,6 @@ namespace TiemCamDo
     public partial class KhoHang : Form
     {
         string MaNV;
-        BLMatHang mh = new BLMatHang();
         bool Them;
         bool IsAdmin;
         public KhoHang(string MaNV, bool IsAdmin)
@@ -46,7 +45,7 @@ namespace TiemCamDo
 
         private void MatHang_Load(object sender, EventArgs e)
         {
-            dgvMatHang.DataSource = mh.GetMH();
+            dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
             rdbCMND.Checked = true;
             dgvMatHang.AllowUserToAddRows = false;
             dgvMatHang.ReadOnly = true;
@@ -87,10 +86,10 @@ namespace TiemCamDo
                 {
                     try
                     {
-                        if (mh.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text ))
+                        if (BLMatHang.Instance.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text ))
                         {
                             // Load lại dữ liệu trên DataGridView     
-                            dgvMatHang.DataSource = mh.GetMH();
+                            dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
                             Enabletxt(false);
                             resettext();
                             //// Không cho thao tác trên các nút Lưu / Hủy
@@ -115,10 +114,10 @@ namespace TiemCamDo
             }
             else
             {
-                if (mh.UpdateMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
+                if (BLMatHang.Instance.UpdateMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                 {
                     // Load lại dữ liệu trên DataGridView      
-                    dgvMatHang.DataSource = mh.GetMH();
+                    dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
                     Enabletxt(false);
                     resettext();
                     //// Không cho thao tác trên các nút Lưu / Hủy
@@ -189,10 +188,10 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (mh.DeleteMH(str))
+                    if (BLMatHang.Instance.DeleteMH(str))
                     {
                         // Cập nhật lại DataGridView                
-                        dgvMatHang.DataSource = mh.GetMH();
+                        dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
                         Enabletxt(false);
                         resettext();
                         //// Không cho thao tác trên các nút Lưu / Hủy
@@ -249,11 +248,11 @@ namespace TiemCamDo
             resettext();
             if (rdbCMND.Checked) //tìm theo mã SV
             {
-                dgvMatHang.DataSource = mh.SearchMHByCMND(txtSearch.Text);
+                dgvMatHang.DataSource = BLMatHang.Instance.SearchMHByCMND(txtSearch.Text);
             }
             else    //tìm theo Họ Tên SV
             {
-                dgvMatHang.DataSource = mh.SearchMHByTenMH(txtSearch.Text);
+                dgvMatHang.DataSource = BLMatHang.Instance.SearchMHByTenMH(txtSearch.Text);
             }
         }
 

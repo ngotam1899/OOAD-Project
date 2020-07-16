@@ -13,7 +13,6 @@ namespace TiemCamDo
 {
     public partial class DoanhThu : Form
     {
-        BLThongKe tk = new BLThongKe();
         string MaNV;
         bool IsAdmin;
         public DoanhThu(string MaNV, bool IsAdmin)
@@ -62,17 +61,17 @@ namespace TiemCamDo
 
         private void btnTK_Click(object sender, EventArgs e)
         {
-            dgvDoanhThuCamDo.DataSource = tk.GetThongKe(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+            dgvDoanhThuCamDo.DataSource = BLThongKe.Instance.GetThongKe(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
             dgvDoanhThuCamDo.AllowUserToAddRows = false;
             dgvDoanhThuCamDo.ReadOnly = true;
             dgvDoanhThuCamDo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dgvDoanhThuTraGop.DataSource = tk.GetThongKeTraGop(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+            dgvDoanhThuTraGop.DataSource = BLThongKe.Instance.GetThongKeTraGop(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
             dgvDoanhThuTraGop.AllowUserToAddRows = false;
             dgvDoanhThuTraGop.ReadOnly = true;
             dgvDoanhThuTraGop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dgvDoanhThuChuocDo.DataSource = tk.GetThongKeChuocDo(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+            dgvDoanhThuChuocDo.DataSource = BLThongKe.Instance.GetThongKeChuocDo(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
             dgvDoanhThuChuocDo.AllowUserToAddRows = false;
             dgvDoanhThuChuocDo.ReadOnly = true;
             dgvDoanhThuChuocDo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
