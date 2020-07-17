@@ -15,6 +15,7 @@ namespace TiemCamDo
 {
     public partial class KhoHang : Form
     {
+        ThanhLyKhoFacade facade = new ThanhLyKhoFacade(BLMatHang.Instance, BLCamDo.Instance);
         string MaNV;
         bool Them;
         bool IsAdmin;
@@ -188,7 +189,7 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (BLMatHang.Instance.DeleteMH(str))
+                    if (facade.ThanhLyKho(str))
                     {
                         // Cập nhật lại DataGridView                
                         dgvMatHang.DataSource = BLMatHang.Instance.GetMH();

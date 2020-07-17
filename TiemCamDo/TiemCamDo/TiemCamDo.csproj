@@ -78,9 +78,8 @@
     <Compile Include="BD Layer\BLMatHang.cs" />
     <Compile Include="BD Layer\BLNhanVien.cs" />
     <Compile Include="BD Layer\Customer.cs" />
-    <Compile Include="BD Layer\INhanVien.cs" />
     <Compile Include="BD Layer\Employee.cs" />
-    <Compile Include="BD Layer\NhanVienBuilder.cs" />
+    <Compile Include="BD Layer\ThanhLyKhoFacade.cs" />
     <Compile Include="CamDo.cs">
       <SubType>Form</SubType>
     </Compile>

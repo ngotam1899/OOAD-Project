@@ -17,7 +17,18 @@ namespace TiemCamDo.BD_Layer
             private set { BLNhanVien.instance = value; }
         }
         private BLNhanVien() { }
-
+        //public List<Employee> GetNV()
+        //{
+        //    List<Employee> employees = new List<Employee>();
+        //    string sqlString = string.Format("EXEC spLoadNhanVien");
+        //    DataTable data= DBMain.Instance.MyExecuteQuery(sqlString);
+        //    foreach (DataRow item in data.Rows)
+        //    {
+        //        Employee employee = new Employee(item);
+        //        employees.Add(employee);
+        //    }
+        //    return employees;
+        //}
         public DataTable GetNV()
         {
             string sqlString = string.Format("EXEC spLoadNhanVien");

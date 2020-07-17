@@ -40,6 +40,13 @@ namespace TiemCamDo.BD_Layer
             int result = DBMain.Instance.MyExecuteNonQuery(sqlString);
             return result > 0;
         }
+        //spDeleteCamDoFromMaHang
+        public bool DeleteCamDoFromMaHangCD(string MaHang)
+        {
+            string sqlString = string.Format("EXEC spDeleteCamDoFromMaHang N'{0}'", MaHang);
+            int result = DBMain.Instance.MyExecuteNonQuery(sqlString);
+            return result > 0;
+        }
         public bool InsertCD(string MaPhieu, string MaHang, DateTime NgayCam, DateTime NgayChuoc, string SoTienCam, string LaiSuat, string MaNV)
         {
             string sqlString =

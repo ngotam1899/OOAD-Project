@@ -30,14 +30,14 @@ namespace TiemCamDo.BD_Layer
         }
         public Employee(DataRow row)
         {
-            this.MaNV = row["MaNV"].ToString();
+            this.MaNV = row["Mã NV"].ToString();
             this.Email = row["Email"].ToString();
-            this.MatKhau = row["MatKhau"].ToString();
-            this.Ten = row["Ten"].ToString();
-            this.GioiTinh = row["GioiTinh"].ToString();
-            this.SoDT = row["SoDT"].ToString();
-            this.DiaChi = row["DiaChi"].ToString();
-            this.Quyen = row["Quyen"].ToString();
+            this.MatKhau = row["Mật khẩu"].ToString();
+            this.Ten = row["Họ và tên"].ToString();
+            this.GioiTinh = row["Giới tính"].ToString();
+            this.SoDT = row["Số điện thoại"].ToString();
+            this.DiaChi = row["Địa chỉ"].ToString();
+            this.Quyen = row["Quyền"].ToString();
         }
     }
 }
