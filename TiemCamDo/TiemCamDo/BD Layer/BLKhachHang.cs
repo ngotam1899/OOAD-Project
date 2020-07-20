@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiemCamDo.DB_Layer;
+using TiemCamDo.Data_Access_Object;
 
 namespace TiemCamDo.BD_Layer
 {
@@ -17,12 +18,23 @@ namespace TiemCamDo.BD_Layer
             private set { BLKhachHang.instance = value; }
         }
         private BLKhachHang() { }
-
-        public DataTable GetKH()
+        public List<Customer> GetKH()
         {
-            string sqlString = "EXEC spLoadKhachHang";
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            List<Customer> customers = new List<Customer>();
+            string sqlString = string.Format("EXEC spLoadKhachHang");
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Customer customer = new Customer(item);
+                customers.Add(customer);
+            }
+            return customers;
         }
+        //public DataTable GetKH()/
+        //{
+        //    string sqlString = "EXEC spLoadKhachHang";
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
         public DataTable GetCMNDTen()
         {
             string sqlString = "EXEC spLoadCMNDTen";
@@ -49,23 +61,43 @@ namespace TiemCamDo.BD_Layer
             int result = DBMain.Instance.MyExecuteNonQuery(sqlString);
             return result > 0;
         }
-        public DataTable SearchKHBySDT(string SDT)
+        public List<Customer> SearchKHBySDT(string SDT)
         {
-
-            string sqlString =
-            string.Format("EXEC spSearchKhachHangBySDT N'%{0}%'", SDT);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            List<Customer> customers = new List<Customer>();
+            string sqlString = string.Format("EXEC spSearchKhachHangBySDT N'%{0}%'", SDT);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Customer customer = new Customer(item);
+                customers.Add(customer);
+            }
+            return customers;
         }
-        public DataTable SearchKHByTen(string Ten)
+        //public DataTable SearchKHBySDT(string SDT)
+        //{
+
+        //    string sqlString =
+        //    string.Format("EXEC spSearchKhachHangBySDT N'%{0}%'", SDT);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
+        //public DataTable SearchKHByTen(string Ten)
+        //{
+        //    string sqlString =
+        //    string.Format("EXEC spSearchKhachHangByTen N'%{0}%'", Ten);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
+
+        public List<Customer> SearchKHByTen(string Ten)
         {
-            string sqlString =
-            string.Format("EXEC spSearchKhachHangByTen N'%{0}%'", Ten);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            List<Customer> customers = new List<Customer>();
+            string sqlString = string.Format("EXEC spSearchKhachHangByTen N'%{0}%'", Ten);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Customer customer = new Customer(item);
+                customers.Add(customer);
+            }
+            return customers;
         }
-
-
-
-
-
     }
 }

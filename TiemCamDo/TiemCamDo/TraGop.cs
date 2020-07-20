@@ -17,11 +17,11 @@ namespace TiemCamDo
         bool Them;
         string MaNV;
         bool IsAdmin;
-        public TraGop(string manv, bool IsAmin)
+        public TraGop(string manv, bool isAdmin)
         {
             InitializeComponent();
             this.MaNV = manv;
-            this.IsAdmin = IsAdmin;
+            this.IsAdmin = isAdmin;
         }
         private void resettext()
         {
@@ -226,7 +226,7 @@ namespace TiemCamDo
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvKH.CurrentCell.RowIndex;
-            txtCMND.Text = dgvKH.Rows[r].Cells["CMND"].Value.ToString();
+            txtCMND.Text = dgvKH.Rows[r].Cells["SocialID"].Value.ToString();
             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByCMND(txtCMND.Text);
         }
 
@@ -235,13 +235,28 @@ namespace TiemCamDo
             try
             {
                 int r = dgvCamDo.CurrentCell.RowIndex;
-                this.txtMaPhieu.Text = dgvCamDo.Rows[r].Cells["Mã phiếu cầm"].Value.ToString();
-                this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["Ngày cầm đồ"].Value.ToString();
-                this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["Số tiền cầm"].Value.ToString();
+                this.txtMaTraGop.Clear();
+                this.txtTienTraGop.Clear();
+                this.dtpNgayTraGop.Value = DateTime.Now;
+                this.txtMaPhieu.Text = dgvCamDo.Rows[r].Cells["ID"].Value.ToString();
+                this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["PawnDate"].Value.ToString();
+                this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["GetMoney"].Value.ToString();
                 dgvTraGop.DataSource = BLTraGop.Instance.GetTraGopByMaPhieuCam(txtMaPhieu.Text);
-                txtTenMon.Text = dgvCamDo.Rows[r].Cells["Tên món hàng"].Value.ToString();
-                txtTienDuNo.Text = dgvCamDo.Rows[r].Cells["Số tiền dư nợ"].Value.ToString();
-                this.txtMaHang.Text = dgvCamDo.Rows[r].Cells["Mã hàng"].Value.ToString();
+                txtTenMon.Text = dgvCamDo.Rows[r].Cells["ProductName"].Value.ToString();
+                txtTienDuNo.Text = dgvCamDo.Rows[r].Cells["Debt"].Value.ToString();
+                this.txtMaHang.Text = dgvCamDo.Rows[r].Cells["ProductID"].Value.ToString();
+                if (txtTienDuNo.Text == "0")
+                {
+                    txtMaTraGop.Enabled = false;
+                    txtTienTraGop.Enabled = false;
+                    dtpNgayTraGop.Enabled = false;
+                }
+                else
+                {
+                    txtMaTraGop.Enabled = true;
+                    txtTienTraGop.Enabled = true;
+                    dtpNgayTraGop.Enabled = true;
+                }
             }
             catch { }
         }
@@ -249,9 +264,9 @@ namespace TiemCamDo
         private void dgvTraGop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvTraGop.CurrentCell.RowIndex;
-            txtMaTraGop.Text = dgvTraGop.Rows[r].Cells["Mã trả góp"].Value.ToString();
-            dtpNgayTraGop.Text = dgvTraGop.Rows[r].Cells["Ngày trả góp"].Value.ToString();
-            txtTienTraGop.Text = dgvTraGop.Rows[r].Cells["Số tiền khách trả"].Value.ToString();
+            txtMaTraGop.Text = dgvTraGop.Rows[r].Cells["ID"].Value.ToString();
+            dtpNgayTraGop.Text = dgvTraGop.Rows[r].Cells["PayDate"].Value.ToString();
+            txtTienTraGop.Text = dgvTraGop.Rows[r].Cells["Money"].Value.ToString();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

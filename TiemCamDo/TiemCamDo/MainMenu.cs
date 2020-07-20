@@ -28,6 +28,7 @@ namespace TiemCamDo
             {
                 groupBox2.Visible=false;
             }
+            else { groupBox2.Visible = true; }
         }
 
 

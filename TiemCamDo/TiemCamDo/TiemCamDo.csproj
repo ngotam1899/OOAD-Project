@@ -77,19 +77,18 @@
     <Compile Include="BD Layer\BLKhachHang.cs" />
     <Compile Include="BD Layer\BLMatHang.cs" />
     <Compile Include="BD Layer\BLNhanVien.cs" />
-    <Compile Include="BD Layer\Customer.cs" />
-    <Compile Include="BD Layer\Employee.cs" />
-    <Compile Include="BD Layer\ThanhLyKhoFacade.cs" />
+    <Compile Include="Data Access Object\Customer.cs" />
+    <Compile Include="Data Access Object\Employee.cs" />
+    <Compile Include="Data Access Object\Installment.cs" />
+    <Compile Include="Data Access Object\Pawn.cs" />
+    <Compile Include="Data Access Object\Product.cs" />
+    <Compile Include="Data Access Object\Regain.cs" />
+    <Compile Include="Facade\ThanhLyKhoFacade.cs" />
     <Compile Include="CamDo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CamDo.Designer.cs">
       <DependentUpon>CamDo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CamDoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CamDoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ChuocDo.cs">
       <SubType>Form</SubType>
@@ -127,12 +126,6 @@
     </Compile>
     <Compile Include="KhoHang.Designer.cs">
       <DependentUpon>KhoHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MakePhieuCamDo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MakePhieuCamDo.Designer.cs">
-      <DependentUpon>MakePhieuCamDo.cs</DependentUpon>
     </Compile>
     <Compile Include="TraGop.cs">
       <SubType>Form</SubType>
@@ -185,9 +178,6 @@
     <EmbeddedResource Include="KhoHang.resx">
       <DependentUpon>KhoHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MakePhieuCamDo.resx">
-      <DependentUpon>MakePhieuCamDo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TraGop.resx">
       <DependentUpon>TraGop.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,17 +202,6 @@
       <DependentUpon>ReportTraGop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportTraGop.rdlc" />
-    <None Include="CamDoDataSet.xsc">
-      <DependentUpon>CamDoDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CamDoDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CamDoDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CamDoDataSet.xss">
-      <DependentUpon>CamDoDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -264,5 +243,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

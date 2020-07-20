@@ -112,7 +112,6 @@ C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\De
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.Login.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.MainMenu.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.KhoHang.resources
-C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.MakePhieuCamDo.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.TraGop.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.Properties.Resources.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.NhanVien.resources

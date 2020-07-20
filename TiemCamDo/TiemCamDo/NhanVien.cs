@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TiemCamDo.DB_Layer;
 using TiemCamDo.BD_Layer;
 using System.Data.SqlClient;
+using TiemCamDo.Data_Access_Object;
 
 namespace TiemCamDo
 {
@@ -48,7 +49,8 @@ namespace TiemCamDo
         }
         private void QuanLy_Load(object sender, EventArgs e)
         {
-            dgvNV.DataSource = BLNhanVien.Instance.GetNV();
+            List<Employee> employees = BLNhanVien.Instance.GetNV();
+            dgvNV.DataSource = employees;
             dgvNV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvNV.AllowUserToAddRows = false;
             dgvNV.ReadOnly = true;
@@ -65,14 +67,14 @@ namespace TiemCamDo
         private void dgvNV_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvNV.CurrentCell.RowIndex;
-            txtHoTen.Text = dgvNV.Rows[r].Cells["Họ và tên"].Value.ToString();
-            txtMK.Text = dgvNV.Rows[r].Cells["Mật khẩu"].Value.ToString();
-            txtMaNV.Text = dgvNV.Rows[r].Cells["Mã NV"].Value.ToString();
+            txtHoTen.Text = dgvNV.Rows[r].Cells["Name"].Value.ToString();
+            txtMK.Text = dgvNV.Rows[r].Cells["Password"].Value.ToString();
+            txtMaNV.Text = dgvNV.Rows[r].Cells["EmployeeID"].Value.ToString();
             txtEmail.Text = dgvNV.Rows[r].Cells["Email"].Value.ToString();
-            txtGioiTinh.Text = dgvNV.Rows[r].Cells["Giới tính"].Value.ToString();
-            txtSoDT.Text = dgvNV.Rows[r].Cells["Số điện thoại"].Value.ToString();
-            txtDiaChi.Text = dgvNV.Rows[r].Cells["Địa chỉ"].Value.ToString();
-            txtQuyen.Text = dgvNV.Rows[r].Cells["Quyền"].Value.ToString();
+            txtGioiTinh.Text = dgvNV.Rows[r].Cells["Gender"].Value.ToString();
+            txtSoDT.Text = dgvNV.Rows[r].Cells["Phone"].Value.ToString();
+            txtDiaChi.Text = dgvNV.Rows[r].Cells["Address"].Value.ToString();
+            txtQuyen.Text = dgvNV.Rows[r].Cells["Authorize"].Value.ToString();
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)

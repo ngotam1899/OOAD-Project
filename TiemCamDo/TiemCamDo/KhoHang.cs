@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TiemCamDo.DB_Layer;
 using TiemCamDo.BD_Layer;
+using TiemCamDo.Facade;
 using System.Data.SqlClient;
 
 namespace TiemCamDo
 {
     public partial class KhoHang : Form
     {
-        ThanhLyKhoFacade facade = new ThanhLyKhoFacade(BLMatHang.Instance, BLCamDo.Instance);
         string MaNV;
         bool Them;
         bool IsAdmin;
@@ -189,7 +189,7 @@ namespace TiemCamDo
                 // Kiểm tra có nhắp chọn nút Ok không?           
                 if (traloi == DialogResult.Yes)
                 {
-                    if (facade.ThanhLyKho(str))
+                    if (ThanhLyKhoFacade.Instance.DeleteMatHang(str))
                     {
                         // Cập nhật lại DataGridView                
                         dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
@@ -234,12 +234,12 @@ namespace TiemCamDo
             try
             {
                 int r = dgvMatHang.CurrentCell.RowIndex;
-                this.txtMaHang.Text = dgvMatHang.Rows[r].Cells["Mã hàng"].Value.ToString();
-                this.txtLoaiHang.Text = dgvMatHang.Rows[r].Cells["Loại hàng"].Value.ToString();
-                this.txtChiTiet.Text = dgvMatHang.Rows[r].Cells["Tên món hàng"].Value.ToString();
-                this.txtGiaTri.Text = dgvMatHang.Rows[r].Cells["Gía trị thực"].Value.ToString();   
-                this.txtCMND.Text = dgvMatHang.Rows[r].Cells["CMND"].Value.ToString();
-                this.cmbTinhTrang.Text = dgvMatHang.Rows[r].Cells["Tình trạng"].Value.ToString();
+                this.txtMaHang.Text = dgvMatHang.Rows[r].Cells["ID"].Value.ToString();
+                this.txtLoaiHang.Text = dgvMatHang.Rows[r].Cells["Type"].Value.ToString();
+                this.txtChiTiet.Text = dgvMatHang.Rows[r].Cells["Name"].Value.ToString();
+                this.txtGiaTri.Text = dgvMatHang.Rows[r].Cells["Price"].Value.ToString();   
+                this.txtCMND.Text = dgvMatHang.Rows[r].Cells["SocialID"].Value.ToString();
+                this.cmbTinhTrang.Text = dgvMatHang.Rows[r].Cells["State"].Value.ToString();
             }
             catch { }
         }

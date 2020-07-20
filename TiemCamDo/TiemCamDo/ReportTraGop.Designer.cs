@@ -34,46 +34,15 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.KhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CamDoDataSet = new TiemCamDo.CamDoDataSet();
             this.PhieuCamDoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PhieuTraGopBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MatHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.KhachHangTableAdapter = new TiemCamDo.CamDoDataSetTableAdapters.KhachHangTableAdapter();
-            this.PhieuCamDoTableAdapter = new TiemCamDo.CamDoDataSetTableAdapters.PhieuCamDoTableAdapter();
-            this.PhieuTraGopTableAdapter = new TiemCamDo.CamDoDataSetTableAdapters.PhieuTraGopTableAdapter();
-            this.MatHangTableAdapter = new TiemCamDo.CamDoDataSetTableAdapters.MatHangTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.KhachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CamDoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuCamDoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuTraGopBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MatHangBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // KhachHangBindingSource
-            // 
-            this.KhachHangBindingSource.DataMember = "KhachHang";
-            this.KhachHangBindingSource.DataSource = this.CamDoDataSet;
-            // 
-            // CamDoDataSet
-            // 
-            this.CamDoDataSet.DataSetName = "CamDoDataSet";
-            this.CamDoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // PhieuCamDoBindingSource
-            // 
-            this.PhieuCamDoBindingSource.DataMember = "PhieuCamDo";
-            this.PhieuCamDoBindingSource.DataSource = this.CamDoDataSet;
-            // 
-            // PhieuTraGopBindingSource
-            // 
-            this.PhieuTraGopBindingSource.DataMember = "PhieuTraGop";
-            this.PhieuTraGopBindingSource.DataSource = this.CamDoDataSet;
-            // 
-            // MatHangBindingSource
-            // 
-            this.MatHangBindingSource.DataMember = "MatHang";
-            this.MatHangBindingSource.DataSource = this.CamDoDataSet;
             // 
             // reportViewer1
             // 
@@ -96,22 +65,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(1052, 776);
             this.reportViewer1.TabIndex = 1;
             // 
-            // KhachHangTableAdapter
-            // 
-            this.KhachHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // PhieuCamDoTableAdapter
-            // 
-            this.PhieuCamDoTableAdapter.ClearBeforeFill = true;
-            // 
-            // PhieuTraGopTableAdapter
-            // 
-            this.PhieuTraGopTableAdapter.ClearBeforeFill = true;
-            // 
-            // MatHangTableAdapter
-            // 
-            this.MatHangTableAdapter.ClearBeforeFill = true;
-            // 
             // ReportTraGop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -122,7 +75,6 @@
             this.Text = "ReportChuocDo";
             this.Load += new System.EventHandler(this.ReportTraGop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.KhachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CamDoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuCamDoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuTraGopBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MatHangBindingSource)).EndInit();
@@ -134,13 +86,8 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource KhachHangBindingSource;
-        private CamDoDataSet CamDoDataSet;
         private System.Windows.Forms.BindingSource PhieuCamDoBindingSource;
         private System.Windows.Forms.BindingSource PhieuTraGopBindingSource;
         private System.Windows.Forms.BindingSource MatHangBindingSource;
-        private CamDoDataSetTableAdapters.KhachHangTableAdapter KhachHangTableAdapter;
-        private CamDoDataSetTableAdapters.PhieuCamDoTableAdapter PhieuCamDoTableAdapter;
-        private CamDoDataSetTableAdapters.PhieuTraGopTableAdapter PhieuTraGopTableAdapter;
-        private CamDoDataSetTableAdapters.MatHangTableAdapter MatHangTableAdapter;
     }
 }

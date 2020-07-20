@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TiemCamDo.Data_Access_Object;
 using TiemCamDo.DB_Layer;
 
 namespace TiemCamDo.BD_Layer
@@ -17,11 +18,23 @@ namespace TiemCamDo.BD_Layer
             private set { BLTraGop.instance = value; }
         }
         private BLTraGop() { }
-        public DataTable GetTraGopByMaPhieuCam(string MaPhieu)
+        public List<Installment> GetTraGopByMaPhieuCam(string MaPhieu)
         {
+            List<Installment> installments = new List<Installment>();
             string sqlString = string.Format("EXEC spLoadTraGopByCamDo N'{0}'", MaPhieu);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Installment installment = new Installment(item);
+                installments.Add(installment);
+            }
+            return installments;
         }
+        //public DataTable GetTraGopByMaPhieuCam(string MaPhieu)
+        //{
+        //    string sqlString = string.Format("EXEC spLoadTraGopByCamDo N'{0}'", MaPhieu);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
         //Show Thông tin khách hàng
         //Show thông tin phieu cam đồ
         //Lấy ra lãi xuất
@@ -48,5 +61,17 @@ namespace TiemCamDo.BD_Layer
             return result > 0;
         }
         //
+        public bool DeleteTraGopFromMaHang(string MaHang)
+        {
+            string sqlString = string.Format("EXEC spDeleteTraGopFromMaHang N'{0}'", MaHang);
+            int result = DBMain.Instance.MyExecuteNonQuery(sqlString);
+            return result > 0;
+        }
+        public bool DeleteTraGopFromMaPhieuCam(string MaPhieuCam)
+        {
+            string sqlString = string.Format("EXEC spDeleteTraGopFromMaPhieuCam N'{0}'", MaPhieuCam);
+            int result = DBMain.Instance.MyExecuteNonQuery(sqlString);
+            return result > 0;
+        }
     }
 }

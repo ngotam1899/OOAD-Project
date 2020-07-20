@@ -177,6 +177,7 @@
             // 
             // dgvNV
             // 
+            this.dgvNV.AllowUserToAddRows = false;
             this.dgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNV.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

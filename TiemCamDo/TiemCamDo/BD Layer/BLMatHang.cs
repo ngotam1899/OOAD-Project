@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiemCamDo.DB_Layer;
+using TiemCamDo.Data_Access_Object;
 
 namespace TiemCamDo.BD_Layer
 {
@@ -17,38 +18,81 @@ namespace TiemCamDo.BD_Layer
             private set { BLMatHang.instance = value; }
         }
         private BLMatHang() { }
-        public DataTable GetMH()
+        public List<Product> GetMH()
         {
+            List<Product> products = new List<Product>();
             string sqlString = string.Format("EXEC spLoadMatHang");
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Product product = new Product(item);
+                products.Add(product);
+            }
+            return products;
         }
-        public DataTable GetMHByMaPhieuCam(string MaPhieu)
+        //public DataTable GetMH()
+        //{
+        //    string sqlString = string.Format("EXEC spLoadMatHang");
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
+        //public DataTable GetMHByMaPhieuCam(string MaPhieu)
+        //{
+        //    string sqlString = string.Format("EXEC spLoadMatHangByMaPhieuCam N'{0}'", MaPhieu);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
+        public List<Product> GetMHByCMND(string CMND)
         {
-            string sqlString = string.Format("EXEC spLoadMatHangByMaPhieuCam N'{0}'", MaPhieu);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
-        }
-
-        public DataTable GetMHByCMND(string CMND)
-        {
+            List<Product> products = new List<Product>();
             string sqlString = string.Format("EXEC spLoadMatHangByCMND N'{0}'", CMND);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Product product = new Product(item);
+                products.Add(product);
+            }
+            return products;
         }
-
-        public DataTable SearchMHByTenMH(string TenMH)
+        //public DataTable GetMHByCMND(string CMND)
+        //{
+        //    string sqlString = string.Format("EXEC spLoadMatHangByCMND N'{0}'", CMND);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
+        public List<Product> SearchMHByTenMH(string TenMH)
         {
-
-            string sqlString =
-            string.Format("EXEC spSearchMatHangByTenMatHang N'%{0}%'", TenMH);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            List<Product> products = new List<Product>();
+            string sqlString = string.Format("EXEC spSearchMatHangByTenMatHang N'%{0}%'", TenMH);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Product product = new Product(item);
+                products.Add(product);
+            }
+            return products;
         }
-
-        public DataTable SearchMHByCMND(string CMND)
+        //public DataTable SearchMHByTenMH(string TenMH)
+        //{
+        //    string sqlString =
+        //    string.Format("EXEC spSearchMatHangByTenMatHang N'%{0}%'", TenMH);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
+        public List<Product> SearchMHByCMND(string CMND)
         {
-
-            string sqlString =
-            string.Format("EXEC spSearchMHByCMND N'%{0}%'", CMND);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            List<Product> products = new List<Product>();
+            string sqlString = string.Format("EXEC spSearchMHByCMND N'%{0}%'", CMND);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Product product = new Product(item);
+                products.Add(product);
+            }
+            return products;
         }
+        //public DataTable SearchMHByCMND(string CMND)
+        //{
+        //    string sqlString =
+        //    string.Format("EXEC spSearchMHByCMND N'%{0}%'", CMND);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
         public bool DeleteMH(string MaHang)
         {
             string sqlString = string.Format("EXEC spDeleteMatHang N'{0}'", MaHang);

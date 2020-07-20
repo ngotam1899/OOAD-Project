@@ -229,14 +229,14 @@ namespace TiemCamDo
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvKH.CurrentCell.RowIndex;
-            txtCMND.Text = dgvKH.Rows[r].Cells["CMND"].Value.ToString();
-            txtHoTen.Text = dgvKH.Rows[r].Cells["Họ và tên"].Value.ToString();
-            txtDiaChi.Text = dgvKH.Rows[r].Cells["Địa chỉ"].Value.ToString();
-            txtNoiCap.Text = dgvKH.Rows[r].Cells["Nơi cấp"].Value.ToString();
-            txtSDT.Text = dgvKH.Rows[r].Cells["Số điện thoại"].Value.ToString();
-            dtpNgaySinh.Text = dgvKH.Rows[r].Cells["Ngày sinh"].Value.ToString();
-            if (dgvKH.Rows[r].Cells["Giới tính"].Value.ToString() == "Nam") rdbNam.Checked = true; else rdbNam.Checked = false;
-            if (dgvKH.Rows[r].Cells["Giới tính"].Value.ToString() == "Nữ") rdbNu.Checked = true; else rdbNu.Checked = false;
+            txtCMND.Text = dgvKH.Rows[r].Cells["SocialID"].Value.ToString();
+            txtHoTen.Text = dgvKH.Rows[r].Cells["Name"].Value.ToString();
+            txtDiaChi.Text = dgvKH.Rows[r].Cells["Address"].Value.ToString();
+            txtNoiCap.Text = dgvKH.Rows[r].Cells["SocialPlace"].Value.ToString();
+            txtSDT.Text = dgvKH.Rows[r].Cells["Phone"].Value.ToString();
+            dtpNgaySinh.Text = dgvKH.Rows[r].Cells["Birth"].Value.ToString();
+            if (dgvKH.Rows[r].Cells["Gender"].Value.ToString() == "Nam") rdbNam.Checked = true; else rdbNam.Checked = false;
+            if (dgvKH.Rows[r].Cells["Gender"].Value.ToString() == "Nữ") rdbNu.Checked = true; else rdbNu.Checked = false;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

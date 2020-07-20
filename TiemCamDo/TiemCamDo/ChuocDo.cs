@@ -45,8 +45,8 @@ namespace TiemCamDo
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvKH.CurrentCell.RowIndex;
-            txtCMND.Text = dgvKH.Rows[r].Cells["CMND"].Value.ToString();
-            txtTen.Text = dgvKH.Rows[r].Cells["Họ và tên"].Value.ToString();
+            txtCMND.Text = dgvKH.Rows[r].Cells["SocialID"].Value.ToString();
+            txtTen.Text = dgvKH.Rows[r].Cells["Name"].Value.ToString();
             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByCMND(txtCMND.Text);
 
         }
@@ -80,12 +80,27 @@ namespace TiemCamDo
         {
             try
             {
+                txtMaPhieuChuoc.Clear();
+                this.dtpNgayChuoc.Value = DateTime.Now;
                 int r = dgvCamDo.CurrentCell.RowIndex;
-                this.txtMaPhieu.Text = dgvCamDo.Rows[r].Cells["Mã phiếu cầm"].Value.ToString();
-                this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["Ngày cầm đồ"].Value.ToString();
-                this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["Số tiền cầm"].Value.ToString();
-                txtChiTiet.Text = dgvCamDo.Rows[r].Cells["Tên món hàng"].Value.ToString();
+                this.txtMaPhieu.Text = dgvCamDo.Rows[r].Cells["ID"].Value.ToString();
+                this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["PawnDate"].Value.ToString();
+                this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["GetMoney"].Value.ToString();
+                txtChiTiet.Text = dgvCamDo.Rows[r].Cells["ProductName"].Value.ToString();
+                txtSoTienChuoc.Text= dgvCamDo.Rows[r].Cells["Debt"].Value.ToString();
                 dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
+                if (txtSoTienChuoc.Text == "0")
+                {
+                    txtMaPhieuChuoc.Enabled = false;
+                    txtSoTienChuoc.Enabled = false;
+                    dtpNgayChuoc.Enabled = false;
+                }
+                else
+                {
+                    txtMaPhieuChuoc.Enabled = true;
+                    txtSoTienChuoc.Enabled = true;
+                    dtpNgayChuoc.Enabled = true;
+                }
             }
             catch { }
         }
@@ -251,9 +266,10 @@ namespace TiemCamDo
         private void dgvMonHang_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
                 int r = dgvMonHang.CurrentCell.RowIndex;
-                txtMaPhieuChuoc.Text = dgvMonHang.Rows[r].Cells["Mã phiếu chuộc"].Value.ToString();
-                dtpNgayChuoc.Text = dgvMonHang.Rows[r].Cells["Ngày chuộc"].Value.ToString();
-                txtSoTienChuoc.Text = dgvMonHang.Rows[r].Cells["Số tiền chuộc"].Value.ToString();
+                txtMaPhieuChuoc.Clear();
+                txtMaPhieuChuoc.Text = dgvMonHang.Rows[r].Cells["ID"].Value.ToString();
+                dtpNgayChuoc.Text = dgvMonHang.Rows[r].Cells["RegainDate"].Value.ToString();
+                txtSoTienChuoc.Text = dgvMonHang.Rows[r].Cells["Money"].Value.ToString();
             
         }
 

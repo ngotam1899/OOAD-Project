@@ -34,14 +34,9 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.KhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CamDoDataSet = new TiemCamDo.CamDoDataSet();
             this.PhieuCamDoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MatHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.KhachHangTableAdapter = new TiemCamDo.CamDoDataSetTableAdapters.KhachHangTableAdapter();
-            this.PhieuCamDoTableAdapter = new TiemCamDo.CamDoDataSetTableAdapters.PhieuCamDoTableAdapter();
-            this.MatHangTableAdapter = new TiemCamDo.CamDoDataSetTableAdapters.MatHangTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.KhachHangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CamDoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuCamDoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MatHangBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,38 +59,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(1046, 894);
             this.reportViewer1.TabIndex = 0;
             // 
-            // KhachHangBindingSource
-            // 
-            this.KhachHangBindingSource.DataMember = "KhachHang";
-            this.KhachHangBindingSource.DataSource = this.CamDoDataSet;
-            // 
-            // CamDoDataSet
-            // 
-            this.CamDoDataSet.DataSetName = "CamDoDataSet";
-            this.CamDoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // PhieuCamDoBindingSource
-            // 
-            this.PhieuCamDoBindingSource.DataMember = "PhieuCamDo";
-            this.PhieuCamDoBindingSource.DataSource = this.CamDoDataSet;
-            // 
-            // MatHangBindingSource
-            // 
-            this.MatHangBindingSource.DataMember = "MatHang";
-            this.MatHangBindingSource.DataSource = this.CamDoDataSet;
-            // 
-            // KhachHangTableAdapter
-            // 
-            this.KhachHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // PhieuCamDoTableAdapter
-            // 
-            this.PhieuCamDoTableAdapter.ClearBeforeFill = true;
-            // 
-            // MatHangTableAdapter
-            // 
-            this.MatHangTableAdapter.ClearBeforeFill = true;
-            // 
             // ReportCamDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -106,7 +69,6 @@
             this.Text = "Report";
             this.Load += new System.EventHandler(this.Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.KhachHangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CamDoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuCamDoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MatHangBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -117,11 +79,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource KhachHangBindingSource;
-        private CamDoDataSet CamDoDataSet;
         private System.Windows.Forms.BindingSource PhieuCamDoBindingSource;
         private System.Windows.Forms.BindingSource MatHangBindingSource;
-        private CamDoDataSetTableAdapters.KhachHangTableAdapter KhachHangTableAdapter;
-        private CamDoDataSetTableAdapters.PhieuCamDoTableAdapter PhieuCamDoTableAdapter;
-        private CamDoDataSetTableAdapters.MatHangTableAdapter MatHangTableAdapter;
     }
 }

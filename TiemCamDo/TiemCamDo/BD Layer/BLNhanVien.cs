@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiemCamDo.DB_Layer;
+using TiemCamDo.Data_Access_Object;
 
 namespace TiemCamDo.BD_Layer
 {
@@ -17,23 +18,23 @@ namespace TiemCamDo.BD_Layer
             private set { BLNhanVien.instance = value; }
         }
         private BLNhanVien() { }
-        //public List<Employee> GetNV()
-        //{
-        //    List<Employee> employees = new List<Employee>();
-        //    string sqlString = string.Format("EXEC spLoadNhanVien");
-        //    DataTable data= DBMain.Instance.MyExecuteQuery(sqlString);
-        //    foreach (DataRow item in data.Rows)
-        //    {
-        //        Employee employee = new Employee(item);
-        //        employees.Add(employee);
-        //    }
-        //    return employees;
-        //}
-        public DataTable GetNV()
+        public List<Employee> GetNV()
         {
+            List<Employee> employees = new List<Employee>();
             string sqlString = string.Format("EXEC spLoadNhanVien");
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Employee employee = new Employee(item);
+                employees.Add(employee);
+            }
+            return employees;
         }
+        //public DataTable GetNV()
+        //{
+        //    string sqlString = string.Format("EXEC spLoadNhanVien");
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
         public bool DeleteNV(string MaNV)
         {
             string sqlString = string.Format("EXEC spDeleteNhanVien N'{0}'", MaNV);
@@ -59,18 +60,42 @@ namespace TiemCamDo.BD_Layer
             string.Format("EXEC spCheckedUser N'{0}',N'{1}',N'{2}'", MaNV, MatKhau, Quyen);
             return DBMain.Instance.MyExecuteQuery(sqlString).Rows.Count > 0;
         }
-        public DataTable SearchNVBySDT(string SDT)
+        public List<Employee> SearchNVBySDT(string SDT)
         {
-            string sqlString =
-            string.Format("EXEC spSearchNhanVienBySDT N'%{0}%'", SDT);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            List<Employee> employees = new List<Employee>();
+            string sqlString = string.Format("EXEC spSearchNhanVienBySDT N'%{0}%'", SDT);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Employee employee = new Employee(item);
+                employees.Add(employee);
+            }
+            return employees;
         }
-        public DataTable SearchNVByTen(string Ten)
+        //public DataTable SearchNVBySDT(string SDT)
+        //{
+        //    string sqlString =
+        //    string.Format("EXEC spSearchNhanVienBySDT N'%{0}%'", SDT);
+        //    return DBMain.Instance.MyExecuteQuery(sqlString);
+        //}
+        public List<Employee> SearchNVByTen(string Ten)
         {
-            string sqlString =
-            string.Format("EXEC spSearchNhanVienByTen N'%{0}%'", Ten);
-            return DBMain.Instance.MyExecuteQuery(sqlString);
+            List<Employee> employees = new List<Employee>();
+            string sqlString = string.Format("EXEC spSearchNhanVienByTen N'%{0}%'", Ten);
+            DataTable data = DBMain.Instance.MyExecuteQuery(sqlString);
+            foreach (DataRow item in data.Rows)
+            {
+                Employee employee = new Employee(item);
+                employees.Add(employee);
+            }
+            return employees;
         }
+        ////public DataTable SearchNVByTen(string Ten)
+        ////{
+        ////    string sqlString =
+        ////    string.Format("EXEC spSearchNhanVienByTen N'%{0}%'", Ten);
+        ////    return DBMain.Instance.MyExecuteQuery(sqlString);
+        ////}
     }
     
 
