@@ -33,7 +33,7 @@ namespace TiemCamDo
             txtMaPhieu.Enabled = t;
             dtpNgayCam.Enabled = t;
             txtSoTienCam.Enabled = t;
-            txtLaiSuat.Enabled = t;
+            cbbLaiSuat.Enabled = t;
             dtpNgayChuoc.Enabled = t;
             txtCMND.Enabled = t;
             txtGiaTri.Enabled = t;
@@ -46,7 +46,7 @@ namespace TiemCamDo
             txtMaPhieu.ResetText();
             dtpNgayCam.ResetText();
             txtSoTienCam.ResetText();
-            txtLaiSuat.ResetText();
+            cbbLaiSuat.ResetText();
             dtpNgayChuoc.ResetText();
             txtCMND.ResetText();
             txtGiaTri.ResetText();
@@ -107,7 +107,7 @@ namespace TiemCamDo
                     {
                         if (BLMatHang.Instance.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                         {
-                            BLCamDo.Instance.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtLaiSuat.Text, txtSoTienCam.Text,  MaNV);
+                            BLCamDo.Instance.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, cbbLaiSuat.SelectedIndex.ToString(), txtSoTienCam.Text,  MaNV);
                             // Load lại dữ liệu trên DataGridView     
                             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
                             dgvMonHang.DataSource = BLMatHang.Instance.GetMHByCMND(txtCMND.Text);
@@ -135,7 +135,7 @@ namespace TiemCamDo
             }
             else
             {
-                if (BLCamDo.Instance.UpdateCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text,   MaNV)
+                if (BLCamDo.Instance.UpdateCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text,cbbLaiSuat.SelectedIndex.ToString(),   MaNV)
                     && BLMatHang.Instance.UpdateMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                 {
                     // Load lại dữ liệu trên DataGridView      
@@ -283,11 +283,12 @@ namespace TiemCamDo
         private void dgvCamDo_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvCamDo.CurrentCell.RowIndex;
+            int i = int.Parse(dgvCamDo.Rows[r].Cells["Interest"].Value.ToString());
             this.txtMaPhieu.Text = dgvCamDo.Rows[r].Cells["ID"].Value.ToString();
             this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["PawnDate"].Value.ToString();
             this.dtpNgayChuoc.Text = dgvCamDo.Rows[r].Cells["RegainDate"].Value.ToString();
             this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["GetMoney"].Value.ToString();
-            this.txtLaiSuat.Text = dgvCamDo.Rows[r].Cells["Interest"].Value.ToString();
+            this.cbbLaiSuat.SelectedIndex = i;
         }
 
         private void dgvMonHang_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -298,7 +299,7 @@ namespace TiemCamDo
             txtChiTiet.Text = dgvMonHang.Rows[r].Cells["Name"].Value.ToString();
             txtCMND.Text = dgvMonHang.Rows[r].Cells["SocialID"].Value.ToString();
             txtGiaTri.Text = dgvMonHang.Rows[r].Cells["Price"].Value.ToString();
-            dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
+            dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);//test here
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
