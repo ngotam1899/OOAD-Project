@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TiemCamDo.BD_Layer;
-using TiemCamDo.State;
 
 namespace TiemCamDo
 {
@@ -54,10 +53,6 @@ namespace TiemCamDo
 
         private void ChuocDo_Load(object sender, EventArgs e)
         {
-
-            //Cách sử dụng tính lãi suất
-            //LÃi suất được sửa lại trên giao diện là dùng combobox bao gồm 3 giá trị: Ngày, Tuần, Tháng. Tương ứng dũ liệu là: 0, 1,
-
             dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.ReadOnly = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -94,13 +89,6 @@ namespace TiemCamDo
                 txtChiTiet.Text = dgvCamDo.Rows[r].Cells["ProductName"].Value.ToString();
                 txtSoTienChuoc.Text= dgvCamDo.Rows[r].Cells["Debt"].Value.ToString();
                 dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
-
-                int numbertypeinterest = int.Parse(dgvCamDo.Rows[r].Cells["Interest"].Value.ToString()); //dữ liệu có thể là 0, 1, 2. Chuyển đổi sang kiểu int
-                float money = float.Parse(txtSoTienCam.Text);
-
-                Interest inter = new Interest(new Daily(money, dtpNgayCam.Value, numbertypeinterest));//Mặc định là chuyền như này, nếu numbertypeinterest thay đổi State sẽ tự động thay đổi
-                txtSoTienChuoc.Text = inter.CaculateInterest().ToString(); //Hàm này sẽ trả ra lãi, return float
-
                 if (txtSoTienChuoc.Text == "0")
                 {
                     txtMaPhieuChuoc.Enabled = false;

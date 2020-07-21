@@ -16,7 +16,7 @@ namespace TiemCamDo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new KhachHang("001",true));
         }
     }
 }

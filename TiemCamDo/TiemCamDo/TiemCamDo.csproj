@@ -127,11 +127,6 @@
     <Compile Include="KhoHang.Designer.cs">
       <DependentUpon>KhoHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="State\Daily.cs" />
-    <Compile Include="State\Interest.cs" />
-    <Compile Include="State\Monthy.cs" />
-    <Compile Include="State\State.cs" />
-    <Compile Include="State\Weekly.cs" />
     <Compile Include="TraGop.cs">
       <SubType>Form</SubType>
     </Compile>
