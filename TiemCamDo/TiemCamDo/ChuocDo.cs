@@ -90,8 +90,9 @@ namespace TiemCamDo
             btnHuy.Enabled = false;
             btnThem.Enabled = false;
             btnEdit.Enabled = false;
-            btnDel.Enabled = true;
+            btnDel.Enabled = false;
             btnExit.Enabled = true;
+            btnXuat.Enabled = false;
         }
         private void ChuocDo_Load(object sender, EventArgs e)
         {
@@ -320,8 +321,12 @@ namespace TiemCamDo
                 txtMaPhieuChuoc.Text = dgvMonHang.Rows[r].Cells["ID"].Value.ToString();
                 dtpNgayChuoc.Text = dgvMonHang.Rows[r].Cells["RegainDate"].Value.ToString();
                 txtSoTienChuoc.Text = dgvMonHang.Rows[r].Cells["Money"].Value.ToString();
-            this.btnEdit.Enabled = true;
-            this.btnDel.Enabled = true;
+            if (dgvCamDo.DataSource != null)
+            {
+                this.btnEdit.Enabled = true;
+                this.btnDel.Enabled = true;
+                btnXuat.Enabled = false;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)

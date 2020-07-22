@@ -20,6 +20,7 @@ namespace TiemCamDo
         bool Them;
         string MaNV;
         bool IsAdmin;
+        
         public CamDo(string manv, bool IsAdmin)
         {
             
@@ -30,10 +31,10 @@ namespace TiemCamDo
 
         private void Enabletxt(bool t)
         {
+            txtLaiSuat.Enabled = false;
             txtMaPhieu.Enabled = t;
             dtpNgayCam.Enabled = t;
             txtSoTienCam.Enabled = t;
-            txtLaiSuat.Enabled = t;
             dtpNgayChuoc.Enabled = t;
             txtCMND.Enabled = t;
             txtGiaTri.Enabled = t;
@@ -80,9 +81,10 @@ namespace TiemCamDo
             rdbTen.Checked = true;
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
-            btnThem.Enabled = false;
+            btnThem.Enabled = true;
             btnEdit.Enabled = false;
             btnExit.Enabled = true;
+            btnXuat.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace TiemCamDo
                     {
                         if (BLMatHang.Instance.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                         {
-                            BLCamDo.Instance.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value,  txtSoTienCam.Text, txtLaiSuat.Text,  MaNV);
+                            BLCamDo.Instance.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text,  MaNV);
                             // Load lại dữ liệu trên DataGridView     
                             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
                             dgvMonHang.DataSource = BLMatHang.Instance.GetMHByCMND(txtCMND.Text);
@@ -180,6 +182,8 @@ namespace TiemCamDo
         private void btnHuy_Click(object sender, EventArgs e)
         {
             LoadKhachHang();
+            dgvCamDo.DataSource = null;
+            dgvMonHang.DataSource = null;
             // Xóa trống các đối tượng trong Panel
             resettext();
             Enabletxt(false);
@@ -249,6 +253,7 @@ namespace TiemCamDo
             this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["GetMoney"].Value.ToString();
             this.txtLaiSuat.Text = dgvCamDo.Rows[r].Cells["Interest"].Value.ToString();
             btnEdit.Enabled = true;
+            btnXuat.Enabled = true;
         }
 
         private void dgvMonHang_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -261,7 +266,6 @@ namespace TiemCamDo
             txtGiaTri.Text = dgvMonHang.Rows[r].Cells["Price"].Value.ToString();
             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
             resetCamDo();
-            this.btnThem.Enabled = true;
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
