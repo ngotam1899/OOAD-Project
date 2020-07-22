@@ -43,55 +43,58 @@ namespace TiemCamDo
         }
         private void resettext()
         {
-            txtMaPhieu.ResetText();
-            dtpNgayCam.ResetText();
-            txtSoTienCam.ResetText();
-            txtLaiSuat.ResetText();
-            dtpNgayChuoc.ResetText();
+            
             txtCMND.ResetText();
+            resetMatHang();
+            resetCamDo();
+        }
+        private void resetMatHang()
+        {
             txtGiaTri.ResetText();
             txtMaHang.ResetText();
             txtLoaiHang.ResetText();
             txtChiTiet.ResetText();
         }
-        private void CamDo_Load(object sender, EventArgs e)
+        private void resetCamDo()
+        {
+            txtMaPhieu.ResetText();
+            dtpNgayCam.ResetText();
+            txtSoTienCam.ResetText();
+            txtLaiSuat.ResetText();
+            dtpNgayChuoc.ResetText();
+        }
+        private void LoadKhachHang()
         {
             dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.AllowUserToAddRows = false;
             dgvKH.ReadOnly = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCamDo.ReadOnly = true;
-            dgvCamDo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Enabletxt(false);
             resettext();
+        }
+        private void CamDo_Load(object sender, EventArgs e)
+        {
+            LoadKhachHang();
+            dgvCamDo.ReadOnly = true;
+            dgvCamDo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             rdbTen.Checked = true;
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
-            btnThem.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDel.Enabled = true;
+            btnThem.Enabled = false;
+            btnEdit.Enabled = false;
             btnExit.Enabled = true;
-            txtCMND.Enabled = false;
-            txtMaHang.Enabled = false;
-            txtLoaiHang.Enabled = false;
-            txtChiTiet.Enabled = false;
-            txtGiaTri.Enabled = false;
-
-
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             Them = true;
             Enabletxt(true);
-            resettext();
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             btnUpdate.Enabled = true;
             btnHuy.Enabled = true;
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát
             btnThem.Enabled = false;
             btnEdit.Enabled = false;
-            btnDel.Enabled = false;
             btnExit.Enabled = false;
 
             txtMaPhieu.Focus();
@@ -119,7 +122,6 @@ namespace TiemCamDo
                             //// Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
                             btnThem.Enabled = true;
                             btnEdit.Enabled = true;
-                            btnDel.Enabled = true;
                             btnExit.Enabled = true;
                             // Thông báo         
                             MessageBox.Show("Đã thêm xong!");
@@ -149,7 +151,6 @@ namespace TiemCamDo
                     //// Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
                     btnThem.Enabled = true;
                     btnEdit.Enabled = true;
-                    btnDel.Enabled = true;
                     btnExit.Enabled = true;
                     // Thông báo              
                     MessageBox.Show("Đã sửa xong!");
@@ -170,74 +171,25 @@ namespace TiemCamDo
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát
             btnThem.Enabled = false;
             btnEdit.Enabled = false;
-            btnDel.Enabled = false;
             btnExit.Enabled = false;
             // Đưa con trỏ đến TextField 
-            //txtMaPhieu.Enabled = false;
+            txtCMND.Enabled = false;
             dtpNgayCam.Focus();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            LoadKhachHang();
             // Xóa trống các đối tượng trong Panel
             resettext();
             Enabletxt(false);
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-            btnThem.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDel.Enabled = true;
-            btnExit.Enabled = true;
+            btnThem.Enabled = false;
+            //btnEdit.Enabled = true;
+            btnExit.Enabled = false;
             // Không cho thao tác trên các nút Lưu / Hủy / Panel
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
-        }
-
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Thực hiện lệnh    
-                // Lấy thứ tự record hiện hành     
-                int r = dgvCamDo.CurrentCell.RowIndex;
-                // Lấy MaKH của record hiện hành       
-                string str = dgvCamDo.Rows[r].Cells[0].Value.ToString();
-                // Viết câu lệnh SQL  
-
-                // Hiện thông báo xác nhận việc xóa mẫu tin       
-                // Khai báo biến traloi            
-                DialogResult traloi;
-                // Hiện hộp thoại hỏi đáp    
-                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                // Kiểm tra có nhắp chọn nút Ok không?           
-                if (traloi == DialogResult.Yes)
-                {
-                    if (ThanhLyKhoFacade.Instance.DeleteCamDo(str))
-                    {
-                        // Cập nhật lại DataGridView                
-                        dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
-                        Enabletxt(false);
-                        resettext();
-                        //// Không cho thao tác trên các nút Lưu / Hủy
-                        btnUpdate.Enabled = false;
-                        btnHuy.Enabled = false;
-                        //// Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-                        btnThem.Enabled = true;
-                        btnEdit.Enabled = true;
-                        btnDel.Enabled = true;
-                        btnExit.Enabled = true;
-                        // Thông báo           
-                        MessageBox.Show("Đã xóa xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa không được,Vui lòng chọn môn muốn xóa");
-                    }
-                }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi");
-            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -257,11 +209,16 @@ namespace TiemCamDo
             if (rdbSDT.Checked) //tìm theo mã SV
             {
                 dgvKH.DataSource = BLKhachHang.Instance.SearchKHBySDT(txtSearch.Text.Trim());
+                dgvCamDo.DataSource = null;
+                dgvMonHang.DataSource = null;
             }
             else   //tìm theo Họ Tên SV
             {
                 dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
+                dgvCamDo.DataSource = null;
+                dgvMonHang.DataSource = null;
             }
+            btnHuy.Enabled = true;
         }
 
  
@@ -278,6 +235,9 @@ namespace TiemCamDo
             int r = dgvKH.CurrentCell.RowIndex;
             txtCMND.Text = dgvKH.Rows[r].Cells["SocialID"].Value.ToString();
             dgvMonHang.DataSource = BLMatHang.Instance.GetMHByCMND(txtCMND.Text);
+            dgvCamDo.DataSource = null;
+            resetMatHang();
+            resetCamDo();
         }
 
         private void dgvCamDo_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -288,6 +248,7 @@ namespace TiemCamDo
             this.dtpNgayChuoc.Text = dgvCamDo.Rows[r].Cells["RegainDate"].Value.ToString();
             this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["GetMoney"].Value.ToString();
             this.txtLaiSuat.Text = dgvCamDo.Rows[r].Cells["Interest"].Value.ToString();
+            btnEdit.Enabled = true;
         }
 
         private void dgvMonHang_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -299,6 +260,8 @@ namespace TiemCamDo
             txtCMND.Text = dgvMonHang.Rows[r].Cells["SocialID"].Value.ToString();
             txtGiaTri.Text = dgvMonHang.Rows[r].Cells["Price"].Value.ToString();
             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
+            resetCamDo();
+            this.btnThem.Enabled = true;
         }
 
         private void btnXuat_Click(object sender, EventArgs e)

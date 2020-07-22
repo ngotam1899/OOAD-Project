@@ -64,12 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
-    </Compile>
     <Compile Include="BD Layer\BLCamDo.cs" />
     <Compile Include="BD Layer\BLChuocDo.cs" />
     <Compile Include="BD Layer\BLThongKe.cs" />
@@ -83,6 +77,14 @@
     <Compile Include="Data Access Object\Pawn.cs" />
     <Compile Include="Data Access Object\Product.cs" />
     <Compile Include="Data Access Object\Regain.cs" />
+    <Compile Include="DataSetCamDo.cs">
+      <DependentUpon>DataSetCamDo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetCamDo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCamDo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Facade\ThanhLyKhoFacade.cs" />
     <Compile Include="CamDo.cs">
       <SubType>Form</SubType>
@@ -127,6 +129,12 @@
     <Compile Include="KhoHang.Designer.cs">
       <DependentUpon>KhoHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportChuocDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportChuocDo.Designer.cs">
+      <DependentUpon>ReportChuocDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="State\Daily.cs" />
     <Compile Include="State\Interest.cs" />
     <Compile Include="State\Monthy.cs" />
@@ -159,9 +167,6 @@
       <DependentUpon>ReportTraGop.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CamDo.resx">
       <DependentUpon>CamDo.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +188,11 @@
     <EmbeddedResource Include="KhoHang.resx">
       <DependentUpon>KhoHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportCD.rdlc" />
+    <EmbeddedResource Include="ReportChuocDo.rdlc" />
+    <EmbeddedResource Include="ReportChuocDo.resx">
+      <DependentUpon>ReportChuocDo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TraGop.resx">
       <DependentUpon>TraGop.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,11 +212,21 @@
     <EmbeddedResource Include="ReportCamDo.resx">
       <DependentUpon>ReportCamDo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportCamDo.rdlc" />
     <EmbeddedResource Include="ReportTraGop.resx">
       <DependentUpon>ReportTraGop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportTraGop.rdlc" />
+    <None Include="DataSetCamDo.xsc">
+      <DependentUpon>DataSetCamDo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCamDo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCamDo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCamDo.xss">
+      <DependentUpon>DataSetCamDo.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

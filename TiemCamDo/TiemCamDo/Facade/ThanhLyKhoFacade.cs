@@ -47,16 +47,17 @@ namespace TiemCamDo.Facade
             return isSuccess;
         }
         //Chức năng của Admin
-        public bool DeleteCamDo(string MaPhieuCam)
+        public bool DeleteNhanVien(string MaNhanVien)
         {
             bool isSuccess = false;
-            //Xóa phiếu cầm đồ
-            isSuccess = this.camDo.DeleteCD(MaPhieuCam);
-            //Xóa phiếu chuộc đồ
-            isSuccess = this.chuocDo.DeleteChuocDoFromMaPhieuCam(MaPhieuCam);
-            //Xóa phiếu trả góp
-            isSuccess = this.traGop.DeleteTraGopFromMaPhieuCam(MaPhieuCam);
+            //Xóa phiếu cầm đồ theo mã nhân viên
+            //isSuccess = this.camDo.DeleteCD(MaNhanVien);
+            //Xóa phiếu chuộc đồ theo mã nhân viên
+            //isSuccess = this.chuocDo.DeleteChuocDoFromMaPhieuCam(MaNhanVien);
+            //Xóa phiếu trả góp theo mã nhân viên
+            //isSuccess = this.traGop.DeleteTraGopFromMaPhieuCam(MaNhanVien);
             return isSuccess;
         }
+
     }
 }

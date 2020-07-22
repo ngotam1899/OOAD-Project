@@ -26,21 +26,41 @@ namespace TiemCamDo
         private void resettext()
         {
             txtCMND.ResetText();
-            //txtTen.ResetText();
+            resetCamDo();
+            resetTraGop();
+        }
+        private void resetTraGop()
+        {
+            txtTienTraGop.ResetText();
+            txtMaTraGop.ResetText();
+            dtpNgayTraGop.ResetText();
+        }
+        private void resetCamDo()
+        {
+            txtMaPhieu.ResetText();
             txtSoTienCam.ResetText();
-            //txtChiTiet.ResetText();
+            txtTenMon.ResetText();
             txtTienDuNo.ResetText();
             dtpNgayCam.ResetText();
             txtTienTraGop.ResetText();
+            txtMaHang.ResetText();
         }
         private void Enabletxt(bool t)
         {
+            txtMaPhieu.Enabled = t;
+            txtCMND.Enabled = t;
+            txtTenMon.Enabled = t;
             txtTienDuNo.Enabled = t;
             dtpNgayCam.Enabled = t;
             txtSoTienCam.Enabled = t;
-            //txtChiTiet.Enabled = t;
+            txtMaHang.Enabled = t;
+            EnableTraGop(t);
+        }
+        private void EnableTraGop(bool t)
+        {
+            txtTienTraGop.Enabled = t;
+            txtMaTraGop.Enabled = t;
             dtpNgayTraGop.Enabled = t;
-
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -49,24 +69,26 @@ namespace TiemCamDo
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            LoadKhachHang();
             // Xóa trống các đối tượng trong Panel
             resettext();
             Enabletxt(false);
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-            btnThem.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDel.Enabled = true;
+            //btnThem.Enabled = true;
+            //btnEdit.Enabled = true;
+            //btnDel.Enabled = true;
             btnExit.Enabled = true;
             // Không cho thao tác trên các nút Lưu / Hủy / Panel
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
+            dgvCamDo.DataSource = null;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             Them = true;
-            Enabletxt(true);
-            resettext();
+            Enabletxt(false);
+            EnableTraGop(true);
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             btnUpdate.Enabled = true;
             btnHuy.Enabled = true;
@@ -76,6 +98,18 @@ namespace TiemCamDo
             btnDel.Enabled = false;
             btnExit.Enabled = false;
             txtMaTraGop.Focus();
+            if (txtTienDuNo.Text == "0")
+            {
+                txtMaTraGop.Enabled = false;
+                txtTienTraGop.Enabled = false;
+                dtpNgayTraGop.Enabled = false;
+            }
+            else
+            {
+                txtMaTraGop.Enabled = true;
+                txtTienTraGop.Enabled = true;
+                dtpNgayTraGop.Enabled = true;
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -196,24 +230,32 @@ namespace TiemCamDo
                 MessageBox.Show("Không xóa được. Lỗi rồi");
             }
         }
-
-        private void TraGop_Load(object sender, EventArgs e)
+        private void LoadKhachHang()
         {
             dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.ReadOnly = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            resettext();
+            Enabletxt(false);
+        }
+        private void LoadData()
+        {
+            LoadKhachHang();
             //dgvChuocDo.DataSource=chd.GetPhieuChuoc();
             dgvCamDo.ReadOnly = true;
             dgvCamDo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            resettext();
             dgvTraGop.ReadOnly = true;
             dgvTraGop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
-            btnThem.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDel.Enabled = true;
+            btnThem.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDel.Enabled = false;
             btnExit.Enabled = true;
+        }
+        private void TraGop_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -228,6 +270,9 @@ namespace TiemCamDo
             int r = dgvKH.CurrentCell.RowIndex;
             txtCMND.Text = dgvKH.Rows[r].Cells["SocialID"].Value.ToString();
             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByCMND(txtCMND.Text);
+            dgvTraGop.DataSource = null;
+            resetCamDo();
+            resetTraGop();
         }
 
         private void dgvCamDo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -245,17 +290,25 @@ namespace TiemCamDo
                 txtTenMon.Text = dgvCamDo.Rows[r].Cells["ProductName"].Value.ToString();
                 txtTienDuNo.Text = dgvCamDo.Rows[r].Cells["Debt"].Value.ToString();
                 this.txtMaHang.Text = dgvCamDo.Rows[r].Cells["ProductID"].Value.ToString();
-                if (txtTienDuNo.Text == "0")
+                this.btnThem.Enabled = true;
+                if (Them)
                 {
-                    txtMaTraGop.Enabled = false;
-                    txtTienTraGop.Enabled = false;
-                    dtpNgayTraGop.Enabled = false;
+                    if (txtTienDuNo.Text == "0")
+                    {
+                        txtMaTraGop.Enabled = false;
+                        txtTienTraGop.Enabled = false;
+                        dtpNgayTraGop.Enabled = false;
+                    }
+                    else
+                    {
+                        txtMaTraGop.Enabled = true;
+                        txtTienTraGop.Enabled = true;
+                        dtpNgayTraGop.Enabled = true;
+                    }
                 }
                 else
                 {
-                    txtMaTraGop.Enabled = true;
-                    txtTienTraGop.Enabled = true;
-                    dtpNgayTraGop.Enabled = true;
+                    resetTraGop();
                 }
             }
             catch { }
@@ -267,6 +320,8 @@ namespace TiemCamDo
             txtMaTraGop.Text = dgvTraGop.Rows[r].Cells["ID"].Value.ToString();
             dtpNgayTraGop.Text = dgvTraGop.Rows[r].Cells["PayDate"].Value.ToString();
             txtTienTraGop.Text = dgvTraGop.Rows[r].Cells["Money"].Value.ToString();
+            this.btnEdit.Enabled = true;
+            this.btnDel.Enabled = true;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -288,11 +343,16 @@ namespace TiemCamDo
             if (rdbSDT.Checked) //tìm theo mã SV
             {
                 dgvKH.DataSource = BLKhachHang.Instance.SearchKHBySDT(txtSearch.Text.Trim());
+                dgvCamDo.DataSource = null;
+                dgvTraGop.DataSource = null;
             }
             else   //tìm theo Họ Tên SV
             {
                 dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
+                dgvCamDo.DataSource = null;
+                dgvTraGop.DataSource = null;
             }
+            btnHuy.Enabled = true;
         }
 
 

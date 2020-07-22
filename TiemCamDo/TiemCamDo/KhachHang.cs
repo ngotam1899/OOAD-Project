@@ -34,23 +34,26 @@ namespace TiemCamDo
             txtDiaChi.Enabled = t;
             txtNoiCap.Enabled = t;
             txtSDT.Enabled = t;
+            dtpNgaySinh.Enabled = t;
         }
         private void resettext()
         {
             txtCMND.ResetText();
             txtHoTen.ResetText();
+            rdbNam.Checked = false;
+            rdbNu.Checked = false;
             txtDiaChi.ResetText();
             txtNoiCap.ResetText();
             txtSDT.ResetText();
+            dtpNgaySinh.ResetText();
         }
-        private void KhachHang_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.AllowUserToAddRows = false;
             dgvKH.ReadOnly = true;
             rdbSDT.Checked = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
             Enabletxt(false);
             Enabletxt(false);
             resettext();
@@ -60,6 +63,10 @@ namespace TiemCamDo
             btnEdit.Enabled = true;
             btnDel.Enabled = true;
             btnExit.Enabled = true;
+        }
+        private void KhachHang_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -72,7 +79,8 @@ namespace TiemCamDo
             else   //tìm theo Họ Tên SV
             {
                 dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
-            }           
+            }
+            btnHuy.Enabled = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -153,6 +161,7 @@ namespace TiemCamDo
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            LoadData();
             // Xóa trống các đối tượng trong Panel
             resettext();
             Enabletxt(false);

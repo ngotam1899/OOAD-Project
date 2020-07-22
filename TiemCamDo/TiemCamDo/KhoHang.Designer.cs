@@ -32,7 +32,6 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.rdbChiTiet = new System.Windows.Forms.RadioButton();
-            this.btnThem = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -71,7 +70,7 @@
             this.btnHuy.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(979, 81);
+            this.btnHuy.Location = new System.Drawing.Point(918, 86);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(123, 48);
@@ -86,7 +85,7 @@
             this.btnDel.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(847, 81);
+            this.btnDel.Location = new System.Drawing.Point(786, 86);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(123, 48);
@@ -107,20 +106,6 @@
             this.rdbChiTiet.TabStop = true;
             this.rdbChiTiet.Text = "Theo tên mặt hàng";
             this.rdbChiTiet.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(453, 81);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(123, 48);
-            this.btnThem.TabIndex = 42;
-            this.btnThem.Text = "Nhập";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTim
             // 
@@ -148,7 +133,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(585, 81);
+            this.btnUpdate.Location = new System.Drawing.Point(524, 86);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 48);
@@ -355,7 +340,7 @@
             this.btnEdit.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(716, 81);
+            this.btnEdit.Location = new System.Drawing.Point(655, 86);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(123, 48);
@@ -429,7 +414,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label1);
@@ -458,7 +442,6 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.RadioButton rdbChiTiet;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnUpdate;

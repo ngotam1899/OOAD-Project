@@ -33,7 +33,7 @@ namespace TiemCamDo
             txtLoaiHang.Enabled = t;
             txtChiTiet.Enabled = t;
             txtGiaTri.Enabled = t;
-            
+            cmbTinhTrang.Enabled = t;
         }
         private void resettext()
         {
@@ -41,10 +41,10 @@ namespace TiemCamDo
             txtLoaiHang.ResetText();
             txtChiTiet.ResetText();
             txtGiaTri.ResetText();
-            
+            cmbTinhTrang.ResetText();
+            txtCMND.ResetText();
         }
-
-        private void MatHang_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
             rdbCMND.Checked = true;
@@ -55,64 +55,20 @@ namespace TiemCamDo
             resettext();
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
-            btnThem.Enabled = true;
             btnEdit.Enabled = true;
             btnDel.Enabled = true;
             btnExit.Enabled = true;
             txtCMND.Enabled = false;
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        private void MatHang_Load(object sender, EventArgs e)
         {
-            Them = true;
-            Enabletxt(true);
-            resettext();
-            // Cho thao tác trên các nút Lưu / Hủy / Panel
-            btnUpdate.Enabled = true;
-            btnHuy.Enabled = true;
-            // Không cho thao tác trên các nút Thêm / Xóa / Thoát
-            btnThem.Enabled = false;
-            btnEdit.Enabled = false;
-            btnDel.Enabled = false;
-            btnExit.Enabled = false;
-            // Đưa con trỏ đến TextField txtMaKH
-            txtMaHang.Focus();
+            LoadData();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (Them)
-            {
-                if ((!txtMaHang.Text.Trim().Equals("")))
-                {
-                    try
-                    {
-                        if (BLMatHang.Instance.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text ))
-                        {
-                            // Load lại dữ liệu trên DataGridView     
-                            dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
-                            Enabletxt(false);
-                            resettext();
-                            //// Không cho thao tác trên các nút Lưu / Hủy
-                            btnUpdate.Enabled = false;
-                            btnHuy.Enabled = false;
-                            //// Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-                            btnThem.Enabled = true;
-                            btnEdit.Enabled = true;
-                            btnDel.Enabled = true;
-                            btnExit.Enabled = true;
-                            // Thông báo         
-                            MessageBox.Show("Đã thêm xong!");
-                        }
-                    }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Không thêm được. Lỗi rồi!");
-                    }
-                }
-                else
-                    MessageBox.Show("Vui lòng điền thông tin");
-            }
+            { }
             else
             {
                 if (BLMatHang.Instance.UpdateMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
@@ -125,7 +81,6 @@ namespace TiemCamDo
                     btnUpdate.Enabled = false;
                     btnHuy.Enabled = false;
                     //// Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-                    btnThem.Enabled = true;
                     btnEdit.Enabled = true;
                     btnDel.Enabled = true;
                     btnExit.Enabled = true;
@@ -146,7 +101,6 @@ namespace TiemCamDo
             btnUpdate.Enabled = true;
             btnHuy.Enabled = true;
             // Không cho thao tác trên các nút Thêm / Xóa / Thoát
-            btnThem.Enabled = false;
             btnEdit.Enabled = false;
             btnDel.Enabled = false;
             btnExit.Enabled = false;
@@ -157,11 +111,11 @@ namespace TiemCamDo
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            LoadData();
             // Xóa trống các đối tượng trong Panel
             resettext();
             Enabletxt(false);
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-            btnThem.Enabled = true;
             btnEdit.Enabled = true;
             btnDel.Enabled = true;
             btnExit.Enabled = true;
@@ -172,49 +126,51 @@ namespace TiemCamDo
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Bạn có thật sự muốn xóa mặt hàng? Thống kê doanh thu của bạn sẽ bị ảnh hưởng sau khi xóa.", "Thông Báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                // Thực hiện lệnh    
-                // Lấy thứ tự record hiện hành     
-                int r = dgvMatHang.CurrentCell.RowIndex;
-                // Lấy MaKH của record hiện hành       
-                string str = dgvMatHang.Rows[r].Cells[0].Value.ToString();
-                // Viết câu lệnh SQL  
-
-                // Hiện thông báo xác nhận việc xóa mẫu tin       
-                // Khai báo biến traloi            
-                DialogResult traloi;
-                // Hiện hộp thoại hỏi đáp    
-                traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                // Kiểm tra có nhắp chọn nút Ok không?           
-                if (traloi == DialogResult.Yes)
+                try
                 {
-                    if (ThanhLyKhoFacade.Instance.DeleteMatHang(str))
+                    // Thực hiện lệnh    
+                    // Lấy thứ tự record hiện hành     
+                    int r = dgvMatHang.CurrentCell.RowIndex;
+                    // Lấy MaKH của record hiện hành       
+                    string str = dgvMatHang.Rows[r].Cells[0].Value.ToString();
+                    // Viết câu lệnh SQL  
+
+                    // Hiện thông báo xác nhận việc xóa mẫu tin       
+                    // Khai báo biến traloi            
+                    DialogResult traloi;
+                    // Hiện hộp thoại hỏi đáp    
+                    traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    // Kiểm tra có nhắp chọn nút Ok không?           
+                    if (traloi == DialogResult.Yes)
                     {
-                        // Cập nhật lại DataGridView                
-                        dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
-                        Enabletxt(false);
-                        resettext();
-                        //// Không cho thao tác trên các nút Lưu / Hủy
-                        btnUpdate.Enabled = false;
-                        btnHuy.Enabled = false;
-                        //// Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-                        btnThem.Enabled = true;
-                        btnEdit.Enabled = true;
-                        btnDel.Enabled = true;
-                        btnExit.Enabled = true;
-                        // Thông báo           
-                        MessageBox.Show("Đã xóa xong!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa không được,Vui lòng chọn môn muốn xóa");
+                        if (ThanhLyKhoFacade.Instance.DeleteMatHang(str))
+                        {
+                            // Cập nhật lại DataGridView                
+                            dgvMatHang.DataSource = BLMatHang.Instance.GetMH();
+                            Enabletxt(false);
+                            resettext();
+                            //// Không cho thao tác trên các nút Lưu / Hủy
+                            btnUpdate.Enabled = false;
+                            btnHuy.Enabled = false;
+                            //// Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
+                            btnEdit.Enabled = true;
+                            btnDel.Enabled = true;
+                            btnExit.Enabled = true;
+                            // Thông báo           
+                            MessageBox.Show("Đã xóa xong!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa không được,Vui lòng chọn môn muốn xóa");
+                        }
                     }
                 }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Không xóa được. Lỗi rồi");
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không xóa được. Lỗi rồi");
+                }
             }
         }
 
@@ -255,6 +211,7 @@ namespace TiemCamDo
             {
                 dgvMatHang.DataSource = BLMatHang.Instance.SearchMHByTenMH(txtSearch.Text);
             }
+            btnHuy.Enabled = true;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

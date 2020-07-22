@@ -44,8 +44,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtQuyen = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSoDT = new System.Windows.Forms.MaskedTextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -60,7 +58,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbNam = new System.Windows.Forms.RadioButton();
+            this.rdbNu = new System.Windows.Forms.RadioButton();
             this.txtMK = new System.Windows.Forms.TextBox();
+            this.cmbQuyen = new System.Windows.Forms.ComboBox();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -251,7 +252,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(139, 119);
+            this.txtEmail.Location = new System.Drawing.Point(140, 162);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(228, 30);
@@ -262,39 +263,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(27, 122);
+            this.label5.Location = new System.Drawing.Point(27, 167);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 23);
             this.label5.TabIndex = 56;
             this.label5.Text = "Email";
             // 
-            // txtQuyen
-            // 
-            this.txtQuyen.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuyen.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtQuyen.Location = new System.Drawing.Point(139, 330);
-            this.txtQuyen.Margin = new System.Windows.Forms.Padding(4);
-            this.txtQuyen.Name = "txtQuyen";
-            this.txtQuyen.Size = new System.Drawing.Size(228, 30);
-            this.txtQuyen.TabIndex = 55;
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.ForeColor = System.Drawing.Color.Black;
-            this.txtGioiTinh.Location = new System.Drawing.Point(140, 78);
-            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(227, 30);
-            this.txtGioiTinh.TabIndex = 1;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(27, 81);
+            this.label7.Location = new System.Drawing.Point(27, 127);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 23);
@@ -305,7 +286,7 @@
             // 
             this.txtSoDT.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDT.ForeColor = System.Drawing.Color.Black;
-            this.txtSoDT.Location = new System.Drawing.Point(139, 160);
+            this.txtSoDT.Location = new System.Drawing.Point(140, 204);
             this.txtSoDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(227, 30);
@@ -315,7 +296,7 @@
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.txtDiaChi.Location = new System.Drawing.Point(140, 204);
+            this.txtDiaChi.Location = new System.Drawing.Point(140, 247);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(226, 30);
@@ -326,7 +307,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(27, 207);
+            this.label3.Location = new System.Drawing.Point(27, 251);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 23);
@@ -338,7 +319,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(27, 163);
+            this.label8.Location = new System.Drawing.Point(27, 211);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 23);
@@ -349,7 +330,7 @@
             // 
             this.txtHoTen.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.ForeColor = System.Drawing.Color.Black;
-            this.txtHoTen.Location = new System.Drawing.Point(140, 34);
+            this.txtHoTen.Location = new System.Drawing.Point(140, 78);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(227, 30);
@@ -360,7 +341,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(27, 41);
+            this.label9.Location = new System.Drawing.Point(27, 81);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 23);
@@ -396,7 +377,7 @@
             // 
             this.txtMaNV.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMaNV.Location = new System.Drawing.Point(139, 246);
+            this.txtMaNV.Location = new System.Drawing.Point(140, 35);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(227, 30);
@@ -419,7 +400,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(27, 249);
+            this.label2.Location = new System.Drawing.Point(27, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 23);
@@ -443,10 +424,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbQuyen);
+            this.groupBox1.Controls.Add(this.rdbNam);
+            this.groupBox1.Controls.Add(this.rdbNu);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtQuyen);
-            this.groupBox1.Controls.Add(this.txtGioiTinh);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtSoDT);
             this.groupBox1.Controls.Add(this.txtDiaChi);
@@ -470,16 +452,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
             // 
+            // rdbNam
+            // 
+            this.rdbNam.AutoSize = true;
+            this.rdbNam.Location = new System.Drawing.Point(140, 121);
+            this.rdbNam.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbNam.Name = "rdbNam";
+            this.rdbNam.Size = new System.Drawing.Size(61, 29);
+            this.rdbNam.TabIndex = 89;
+            this.rdbNam.TabStop = true;
+            this.rdbNam.Text = "Nam";
+            this.rdbNam.UseVisualStyleBackColor = true;
+            // 
+            // rdbNu
+            // 
+            this.rdbNu.AutoSize = true;
+            this.rdbNu.Location = new System.Drawing.Point(245, 121);
+            this.rdbNu.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbNu.Name = "rdbNu";
+            this.rdbNu.Size = new System.Drawing.Size(50, 29);
+            this.rdbNu.TabIndex = 88;
+            this.rdbNu.TabStop = true;
+            this.rdbNu.Text = "Nữ";
+            this.rdbNu.UseVisualStyleBackColor = true;
+            // 
             // txtMK
             // 
             this.txtMK.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMK.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMK.Location = new System.Drawing.Point(139, 289);
+            this.txtMK.Location = new System.Drawing.Point(140, 289);
             this.txtMK.Margin = new System.Windows.Forms.Padding(4);
             this.txtMK.Name = "txtMK";
             this.txtMK.PasswordChar = '*';
             this.txtMK.Size = new System.Drawing.Size(228, 30);
             this.txtMK.TabIndex = 5;
+            // 
+            // cmbQuyen
+            // 
+            this.cmbQuyen.FormattingEnabled = true;
+            this.cmbQuyen.Items.AddRange(new object[] {
+            "Admin",
+            "NhanVien"});
+            this.cmbQuyen.Location = new System.Drawing.Point(140, 326);
+            this.cmbQuyen.Name = "cmbQuyen";
+            this.cmbQuyen.Size = new System.Drawing.Size(226, 33);
+            this.cmbQuyen.TabIndex = 90;
             // 
             // NhanVien
             // 
@@ -533,8 +550,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtQuyen;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox txtSoDT;
         private System.Windows.Forms.TextBox txtDiaChi;
@@ -550,5 +565,8 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtMK;
+        private System.Windows.Forms.RadioButton rdbNam;
+        private System.Windows.Forms.RadioButton rdbNu;
+        private System.Windows.Forms.ComboBox cmbQuyen;
     }
 }

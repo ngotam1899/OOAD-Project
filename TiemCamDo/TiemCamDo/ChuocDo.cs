@@ -27,20 +27,38 @@ namespace TiemCamDo
         {
             txtCMND.ResetText();
             txtTen.ResetText();
+            resetCamDo();
+            resetChuocDo();
+        }
+        private void resetCamDo()
+        {
+            txtMaPhieu.ResetText();
             txtSoTienCam.ResetText();
             txtChiTiet.ResetText();
-            txtMaPhieuChuoc.ResetText();
             dtpNgayCam.ResetText();
+        }
+        private void resetChuocDo()
+        {
+            txtMaPhieuChuoc.ResetText();
+            txtSoTienChuoc.ResetText();
             txtSoTienChuoc.ResetText();
         }
         private void Enabletxt(bool t)
         {
+            txtCMND.Enabled = t;
+            txtTen.Enabled = t;
             txtMaPhieuChuoc.Enabled = t;
             dtpNgayCam.Enabled = t;
             txtSoTienCam.Enabled = t;
             txtChiTiet.Enabled = t;
+            txtMaPhieu.Enabled = t;
+            EnableChuocDo(t);
+        }
+        private void EnableChuocDo(bool t)
+        {
+            txtMaPhieuChuoc.Enabled = t;
             dtpNgayChuoc.Enabled = t;
-
+            txtSoTienChuoc.Enabled = t;
         }
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -48,32 +66,36 @@ namespace TiemCamDo
             txtCMND.Text = dgvKH.Rows[r].Cells["SocialID"].Value.ToString();
             txtTen.Text = dgvKH.Rows[r].Cells["Name"].Value.ToString();
             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByCMND(txtCMND.Text);
-
+            dgvMonHang.DataSource = null;
+            resetCamDo();
+            resetChuocDo();
         }
-
-        private void ChuocDo_Load(object sender, EventArgs e)
+        private void LoadKhachHang()
         {
             dgvKH.DataSource = BLKhachHang.Instance.GetKH();
             dgvKH.ReadOnly = true;
             dgvKH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            resettext();
+            Enabletxt(false);
+        }
+        private void LoadData()
+        {
+            LoadKhachHang();
             //dgvChuocDo.DataSource=chd.GetPhieuChuoc();
             dgvCamDo.ReadOnly = true;
             dgvCamDo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            resettext();
             dgvMonHang.ReadOnly = true;
             dgvMonHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
-            btnThem.Enabled = true;
-            btnEdit.Enabled = true;
+            btnThem.Enabled = false;
+            btnEdit.Enabled = false;
             btnDel.Enabled = true;
             btnExit.Enabled = true;
-            
-            //txtCMND.Enabled = false;
-            //txtMaHang.Enabled = false;
-            //txtLoaiHang.Enabled = false;
-            //txtChiTiet.Enabled = false;
-            //txtGiaTri.Enabled = false;
+        }
+        private void ChuocDo_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void dgvCamDo_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -86,20 +108,28 @@ namespace TiemCamDo
                 this.txtMaPhieu.Text = dgvCamDo.Rows[r].Cells["ID"].Value.ToString();
                 this.dtpNgayCam.Text = dgvCamDo.Rows[r].Cells["PawnDate"].Value.ToString();
                 this.txtSoTienCam.Text = dgvCamDo.Rows[r].Cells["GetMoney"].Value.ToString();
-                txtChiTiet.Text = dgvCamDo.Rows[r].Cells["ProductName"].Value.ToString();
-                txtSoTienChuoc.Text= dgvCamDo.Rows[r].Cells["Debt"].Value.ToString();
+                this.txtChiTiet.Text = dgvCamDo.Rows[r].Cells["ProductName"].Value.ToString();
                 dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
-                if (txtSoTienChuoc.Text == "0")
+                this.btnThem.Enabled = true;
+                if (Them)
                 {
-                    txtMaPhieuChuoc.Enabled = false;
-                    txtSoTienChuoc.Enabled = false;
-                    dtpNgayChuoc.Enabled = false;
+                    txtSoTienChuoc.Text = dgvCamDo.Rows[r].Cells["Debt"].Value.ToString();
+                    if (txtSoTienChuoc.Text == "0")
+                    {
+                        txtMaPhieuChuoc.Enabled = false;
+                        txtSoTienChuoc.Enabled = false;
+                        dtpNgayChuoc.Enabled = false;
+                    }
+                    else
+                    {
+                        txtMaPhieuChuoc.Enabled = true;
+                        txtSoTienChuoc.Enabled = true;
+                        dtpNgayChuoc.Enabled = true;
+                    }
                 }
                 else
                 {
-                    txtMaPhieuChuoc.Enabled = true;
-                    txtSoTienChuoc.Enabled = true;
-                    dtpNgayChuoc.Enabled = true;
+                    resetChuocDo();
                 }
             }
             catch { }
@@ -169,6 +199,7 @@ namespace TiemCamDo
                             dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
                             Enabletxt(false);
                             resettext();
+                            LoadData();
                             //// Không cho thao tác trên các nút Lưu / Hủy
                             btnUpdate.Enabled = false;
                             btnHuy.Enabled = false;
@@ -197,6 +228,7 @@ namespace TiemCamDo
                     dgvMonHang.DataSource = BLChuocDo.Instance.GetChDByMaPhieu(txtMaPhieu.Text);
                     Enabletxt(false);
                     resettext();
+                    LoadData();
                     //// Không cho thao tác trên các nút Lưu / Hủy
                     btnUpdate.Enabled = false;
                     btnHuy.Enabled = false;
@@ -233,24 +265,28 @@ namespace TiemCamDo
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            Them = false;
+            LoadKhachHang();
             // Xóa trống các đối tượng trong Panel
             resettext();
             Enabletxt(false);
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-            btnThem.Enabled = true;
-            btnEdit.Enabled = true;
+            //btnThem.Enabled = true;
+            //btnEdit.Enabled = true;
             btnDel.Enabled = true;
             btnExit.Enabled = true;
             // Không cho thao tác trên các nút Lưu / Hủy / Panel
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
+            dgvCamDo.DataSource = null;
+            dgvMonHang.DataSource = null;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             Them = true;
-            Enabletxt(true);
-            resettext();
+            Enabletxt(false);
+            EnableChuocDo(true);
             // Cho thao tác trên các nút Lưu / Hủy / Panel
             btnUpdate.Enabled = true;
             btnHuy.Enabled = true;
@@ -260,6 +296,20 @@ namespace TiemCamDo
             btnDel.Enabled = false;
             btnExit.Enabled = false;
             txtMaPhieuChuoc.Focus();
+            int r = dgvCamDo.CurrentCell.RowIndex;
+            txtSoTienChuoc.Text = dgvCamDo.Rows[r].Cells["Debt"].Value.ToString();
+            if (txtSoTienChuoc.Text == "0")
+            {
+                txtMaPhieuChuoc.Enabled = false;
+                txtSoTienChuoc.Enabled = false;
+                dtpNgayChuoc.Enabled = false;
+            }
+            else
+            {
+                txtMaPhieuChuoc.Enabled = true;
+                txtSoTienChuoc.Enabled = true;
+                dtpNgayChuoc.Enabled = true;
+            }
         }
 
 
@@ -270,7 +320,8 @@ namespace TiemCamDo
                 txtMaPhieuChuoc.Text = dgvMonHang.Rows[r].Cells["ID"].Value.ToString();
                 dtpNgayChuoc.Text = dgvMonHang.Rows[r].Cells["RegainDate"].Value.ToString();
                 txtSoTienChuoc.Text = dgvMonHang.Rows[r].Cells["Money"].Value.ToString();
-            
+            this.btnEdit.Enabled = true;
+            this.btnDel.Enabled = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -308,11 +359,22 @@ namespace TiemCamDo
             if (rdbSDT.Checked) //tìm theo mã SV
             {
                 dgvKH.DataSource = BLKhachHang.Instance.SearchKHBySDT(txtSearch.Text.Trim());
+                dgvCamDo.DataSource = null;
+                dgvMonHang.DataSource = null;
             }
             else   //tìm theo Họ Tên SV
             {
                 dgvKH.DataSource = BLKhachHang.Instance.SearchKHByTen(txtSearch.Text.Trim());
+                dgvCamDo.DataSource = null;
+                dgvMonHang.DataSource = null;
             }
+            btnHuy.Enabled = true;
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            ReportChuocDo rp = new ReportChuocDo(this.txtMaPhieu.Text,this.txtMaPhieuChuoc.Text, this.txtCMND.Text, this.txtMaPhieu.Text);
+            rp.ShowDialog();
         }
     }
 }

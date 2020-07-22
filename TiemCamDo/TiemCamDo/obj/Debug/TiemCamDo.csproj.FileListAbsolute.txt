@@ -104,7 +104,6 @@ C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\bin\De
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.exe.config
-C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.Admin.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.CamDo.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.ChuocDo.resources
 C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.DoanhThu.resources
@@ -228,3 +227,4 @@ D:\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.csproj.CoreCompileInputs
 D:\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.csproj.CopyComplete
 D:\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.exe
 D:\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.pdb
+C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\obj\Debug\TiemCamDo.ReportChuocDo.resources

@@ -29,25 +29,27 @@ namespace TiemCamDo
         {
             txtHoTen.Enabled = t;
             txtDiaChi.Enabled = t;
-            txtGioiTinh.Enabled = t;
+            rdbNam.Enabled = t;
+            rdbNu.Enabled = t;
             txtMaNV.Enabled = t;
             txtMK.Enabled = t;
             txtSoDT.Enabled = t;
-            txtQuyen.Enabled = t;
+            cmbQuyen.Enabled = t;
             txtEmail.Enabled = t;
         }
         private void resettext()
         {
             txtHoTen.ResetText();
             txtDiaChi.ResetText();
-            txtGioiTinh.ResetText();
+            rdbNam.Checked = false;
+            rdbNam.Checked = false;
             txtMaNV.ResetText();
             txtMK.ResetText();
             txtSoDT.ResetText();
-            txtQuyen.ResetText();
+            cmbQuyen.ResetText();
             txtEmail.ResetText();
         }
-        private void QuanLy_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             List<Employee> employees = BLNhanVien.Instance.GetNV();
             dgvNV.DataSource = employees;
@@ -56,6 +58,12 @@ namespace TiemCamDo
             dgvNV.ReadOnly = true;
             dgvNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             groupBox1.Enabled = false;
+        }
+        private void QuanLy_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            btnHuy.Enabled = false;
+            btnUpdate.Enabled = false;
         }
         private void btnExit_Click_1(object sender, EventArgs e)
         {
@@ -71,10 +79,12 @@ namespace TiemCamDo
             txtMK.Text = dgvNV.Rows[r].Cells["Password"].Value.ToString();
             txtMaNV.Text = dgvNV.Rows[r].Cells["EmployeeID"].Value.ToString();
             txtEmail.Text = dgvNV.Rows[r].Cells["Email"].Value.ToString();
-            txtGioiTinh.Text = dgvNV.Rows[r].Cells["Gender"].Value.ToString();
+            if (dgvNV.Rows[r].Cells["Gender"].Value.ToString() == "Nam") rdbNam.Checked = true;
+            if (dgvNV.Rows[r].Cells["Gender"].Value.ToString() == "Nữ") rdbNu.Checked = true; 
             txtSoDT.Text = dgvNV.Rows[r].Cells["Phone"].Value.ToString();
             txtDiaChi.Text = dgvNV.Rows[r].Cells["Address"].Value.ToString();
-            txtQuyen.Text = dgvNV.Rows[r].Cells["Authorize"].Value.ToString();
+            cmbQuyen.Text = dgvNV.Rows[r].Cells["Authorize"].Value.ToString();
+            
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)
@@ -105,6 +115,7 @@ namespace TiemCamDo
             btnXoa.Enabled = false;
             btnHuy.Enabled = true;
             btnThem.Enabled = false;
+            btnUpdate.Enabled = true;
             txtHoTen.Focus();
         }
 
@@ -116,7 +127,7 @@ namespace TiemCamDo
                 {
                     try
                     {
-                        if (BLNhanVien.Instance.InsertNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, txtGioiTinh.Text, txtSoDT.Text, txtDiaChi.Text, txtQuyen.Text))
+                        if (BLNhanVien.Instance.InsertNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, (rdbNam.Checked) ? "Nam" : "Nữ", txtSoDT.Text, txtDiaChi.Text, cmbQuyen.Text))
                         {
                             // Load lại dữ liệu trên DataGridView     
                             dgvNV.DataSource = BLNhanVien.Instance.GetNV();
@@ -143,7 +154,7 @@ namespace TiemCamDo
             }
             else
             {
-                if (BLNhanVien.Instance.UpdateNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, txtGioiTinh.Text, txtSoDT.Text, txtDiaChi.Text, txtQuyen.Text))
+                if (BLNhanVien.Instance.UpdateNV(txtMaNV.Text, txtEmail.Text, txtMK.Text, txtHoTen.Text, (rdbNam.Checked) ? "Nam" : "Nữ", txtSoDT.Text, txtDiaChi.Text, cmbQuyen.Text))
                 {
                     // Load lại dữ liệu trên DataGridView      
                     dgvNV.DataSource = BLNhanVien.Instance.GetNV();
@@ -212,13 +223,13 @@ namespace TiemCamDo
 
         private void btnHuy_Click_1(object sender, EventArgs e)
         {
+            LoadData();
             // Xóa trống các đối tượng trong Panel
             resettext();
-            Enabletxt(false);
             // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát
-            btnThem.Enabled = true;
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+            btnThem.Enabled = true;
             // Không cho thao tác trên các nút Lưu / Hủy / Panel
             btnUpdate.Enabled = false;
             btnHuy.Enabled = false;
@@ -235,6 +246,7 @@ namespace TiemCamDo
             {
                 dgvNV.DataSource = BLNhanVien.Instance.SearchNVByTen(txtSearch.Text.Trim());
             }
+            btnHuy.Enabled = true;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -243,5 +255,11 @@ namespace TiemCamDo
             this.Hide();
             f1.ShowDialog();
         }
+
+        private void txtQuyen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

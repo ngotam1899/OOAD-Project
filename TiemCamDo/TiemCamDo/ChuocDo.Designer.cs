@@ -68,6 +68,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.PictureBox();
+            this.btnXuat = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCamDo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -86,9 +87,9 @@
             this.groupBox4.Controls.Add(this.dgvCamDo);
             this.groupBox4.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(393, 327);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Size = new System.Drawing.Size(1047, 185);
             this.groupBox4.TabIndex = 54;
             this.groupBox4.TabStop = false;
@@ -99,7 +100,7 @@
             this.dgvCamDo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCamDo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCamDo.Location = new System.Drawing.Point(8, 23);
-            this.dgvCamDo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCamDo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCamDo.Name = "dgvCamDo";
             this.dgvCamDo.RowHeadersWidth = 51;
             this.dgvCamDo.Size = new System.Drawing.Size(1031, 154);
@@ -125,9 +126,9 @@
             this.groupBox1.Controls.Add(this.dgvKH);
             this.groupBox1.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(393, 156);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(1047, 150);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
@@ -138,7 +139,7 @@
             this.dgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Location = new System.Drawing.Point(8, 23);
-            this.dgvKH.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.Size = new System.Drawing.Size(1031, 118);
@@ -161,9 +162,9 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(38, 253);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Size = new System.Drawing.Size(321, 274);
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
@@ -174,7 +175,7 @@
             // 
             this.txtMaPhieu.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaPhieu.Location = new System.Drawing.Point(127, 34);
-            this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(178, 30);
             this.txtMaPhieu.TabIndex = 56;
@@ -183,7 +184,7 @@
             // 
             this.txtSoTienCam.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoTienCam.Location = new System.Drawing.Point(128, 186);
-            this.txtSoTienCam.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoTienCam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoTienCam.Name = "txtSoTienCam";
             this.txtSoTienCam.Size = new System.Drawing.Size(177, 30);
             this.txtSoTienCam.TabIndex = 70;
@@ -214,7 +215,7 @@
             // 
             this.txtTen.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.Location = new System.Drawing.Point(128, 72);
-            this.txtTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(177, 30);
             this.txtTen.TabIndex = 62;
@@ -223,7 +224,7 @@
             // 
             this.txtCMND.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCMND.Location = new System.Drawing.Point(127, 110);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCMND.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(178, 30);
             this.txtCMND.TabIndex = 61;
@@ -254,7 +255,7 @@
             // 
             this.txtChiTiet.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChiTiet.Location = new System.Drawing.Point(128, 150);
-            this.txtChiTiet.Margin = new System.Windows.Forms.Padding(4);
+            this.txtChiTiet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChiTiet.Name = "txtChiTiet";
             this.txtChiTiet.Size = new System.Drawing.Size(177, 30);
             this.txtChiTiet.TabIndex = 60;
@@ -274,7 +275,7 @@
             // 
             this.dtpNgayCam.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayCam.Location = new System.Drawing.Point(128, 229);
-            this.dtpNgayCam.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpNgayCam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpNgayCam.Name = "dtpNgayCam";
             this.dtpNgayCam.Size = new System.Drawing.Size(177, 30);
             this.dtpNgayCam.TabIndex = 50;
@@ -294,7 +295,7 @@
             // 
             this.dtpNgayChuoc.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayChuoc.Location = new System.Drawing.Point(127, 110);
-            this.dtpNgayChuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpNgayChuoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpNgayChuoc.Name = "dtpNgayChuoc";
             this.dtpNgayChuoc.Size = new System.Drawing.Size(177, 30);
             this.dtpNgayChuoc.TabIndex = 68;
@@ -314,7 +315,7 @@
             // 
             this.txtMaPhieuChuoc.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaPhieuChuoc.Location = new System.Drawing.Point(126, 33);
-            this.txtMaPhieuChuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaPhieuChuoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaPhieuChuoc.Name = "txtMaPhieuChuoc";
             this.txtMaPhieuChuoc.Size = new System.Drawing.Size(178, 30);
             this.txtMaPhieuChuoc.TabIndex = 52;
@@ -334,7 +335,7 @@
             // 
             this.txtSoTienChuoc.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoTienChuoc.Location = new System.Drawing.Point(126, 72);
-            this.txtSoTienChuoc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoTienChuoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoTienChuoc.Name = "txtSoTienChuoc";
             this.txtSoTienChuoc.Size = new System.Drawing.Size(178, 30);
             this.txtSoTienChuoc.TabIndex = 45;
@@ -356,8 +357,8 @@
             this.btnHuy.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(1001, 93);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuy.Location = new System.Drawing.Point(890, 94);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(123, 48);
             this.btnHuy.TabIndex = 44;
@@ -371,8 +372,8 @@
             this.btnDel.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(1132, 93);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDel.Location = new System.Drawing.Point(1022, 94);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(123, 48);
             this.btnDel.TabIndex = 43;
@@ -385,8 +386,8 @@
             this.btnUpdate.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(739, 93);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Location = new System.Drawing.Point(629, 94);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 48);
             this.btnUpdate.TabIndex = 40;
@@ -402,9 +403,9 @@
             this.groupBox5.Controls.Add(this.rdbSDT);
             this.groupBox5.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(38, 92);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Size = new System.Drawing.Size(321, 136);
             this.groupBox5.TabIndex = 45;
             this.groupBox5.TabStop = false;
@@ -414,7 +415,7 @@
             // btnTim
             // 
             this.btnTim.Location = new System.Drawing.Point(222, 28);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(77, 36);
             this.btnTim.TabIndex = 9;
@@ -426,7 +427,7 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(18, 95);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(284, 30);
             this.txtSearch.TabIndex = 2;
@@ -436,7 +437,7 @@
             this.rdbHoTen.AutoSize = true;
             this.rdbHoTen.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbHoTen.Location = new System.Drawing.Point(18, 28);
-            this.rdbHoTen.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbHoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbHoTen.Name = "rdbHoTen";
             this.rdbHoTen.Size = new System.Drawing.Size(162, 27);
             this.rdbHoTen.TabIndex = 1;
@@ -449,7 +450,7 @@
             this.rdbSDT.AutoSize = true;
             this.rdbSDT.Font = new System.Drawing.Font("UTM Bebas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbSDT.Location = new System.Drawing.Point(18, 60);
-            this.rdbSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.rdbSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbSDT.Name = "rdbSDT";
             this.rdbSDT.Size = new System.Drawing.Size(150, 27);
             this.rdbSDT.TabIndex = 0;
@@ -462,8 +463,8 @@
             this.btnThem.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(608, 91);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Location = new System.Drawing.Point(498, 92);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(123, 48);
             this.btnThem.TabIndex = 39;
@@ -476,8 +477,8 @@
             this.btnEdit.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(870, 93);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEdit.Location = new System.Drawing.Point(760, 94);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(123, 48);
             this.btnEdit.TabIndex = 41;
@@ -490,9 +491,9 @@
             this.groupBox7.Controls.Add(this.dgvMonHang);
             this.groupBox7.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(393, 538);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox7.Size = new System.Drawing.Size(1047, 172);
             this.groupBox7.TabIndex = 53;
             this.groupBox7.TabStop = false;
@@ -503,7 +504,7 @@
             this.dgvMonHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonHang.Location = new System.Drawing.Point(8, 25);
-            this.dgvMonHang.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMonHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvMonHang.Name = "dgvMonHang";
             this.dgvMonHang.RowHeadersWidth = 51;
             this.dgvMonHang.Size = new System.Drawing.Size(1031, 139);
@@ -554,12 +555,28 @@
             this.btnExit.TabStop = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnXuat
+            // 
+            this.btnXuat.Font = new System.Drawing.Font("UTM Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuat.ForeColor = System.Drawing.Color.Blue;
+            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
+            this.btnXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuat.Location = new System.Drawing.Point(1153, 95);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(123, 46);
+            this.btnXuat.TabIndex = 86;
+            this.btnXuat.Text = "Report ";
+            this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
             // ChuocDo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TiemCamDo.Properties.Resources.DpyRQk5VAAEhhSc;
-            this.ClientSize = new System.Drawing.Size(1475, 754);
+            this.ClientSize = new System.Drawing.Size(1484, 754);
+            this.Controls.Add(this.btnXuat);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnHuy);
@@ -638,5 +655,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox btnExit;
         private System.Windows.Forms.DataGridView dgvMonHang;
+        private System.Windows.Forms.Button btnXuat;
     }
 }

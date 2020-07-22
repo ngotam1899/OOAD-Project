@@ -23,6 +23,10 @@ namespace TiemCamDo
 
         private void Report_Load(object sender, EventArgs e)
         {
+            this.MatHangTableAdapter.Fill(this.DataSetCamDo.MatHang, MaHang);
+            this.KhachHangTableAdapter.Fill(this.DataSetCamDo.KhachHang, CMND);
+            // TODO: This line of code loads data into the 'DataSetCamDo.PhieuCamDo' table. You can move, or remove it, as needed.
+            this.PhieuCamDoTableAdapter.Fill(this.DataSetCamDo.PhieuCamDo,MaPhieu);
             //this.ReportTableAdapter.Fill(this.CafeteriaBillReport.Report, this.ID_Bill);
             this.reportViewer1.RefreshReport();
         }

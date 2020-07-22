@@ -32,8 +32,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.325in</Top>
-        <Left>0.36944in</Left>
+        <Top>0.42446in</Top>
+        <Left>0.42218in</Left>
         <Height>0.25in</Height>
         <Width>1.5in</Width>
         <Style>
@@ -74,8 +74,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.28333in</Top>
-        <Left>3.16444in</Left>
+        <Top>0.38279in</Top>
+        <Left>3.21718in</Left>
         <Height>0.25in</Height>
         <Width>2.875in</Width>
         <ZIndex>1</ZIndex>
@@ -119,8 +119,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.58889in</Top>
-        <Left>3.61444in</Left>
+        <Top>0.68835in</Top>
+        <Left>3.66718in</Left>
         <Height>0.25in</Height>
         <Width>1.91667in</Width>
         <ZIndex>2</ZIndex>
@@ -157,8 +157,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.15333in</Top>
-        <Left>3.03111in</Left>
+        <Top>1.25279in</Top>
+        <Left>3.08385in</Left>
         <Height>0.25in</Height>
         <Width>1.46667in</Width>
         <ZIndex>3</ZIndex>
@@ -195,8 +195,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.15333in</Top>
-        <Left>4.53945in</Left>
+        <Top>1.25279in</Top>
+        <Left>4.59219in</Left>
         <Height>0.25in</Height>
         <Width>0.78334in</Width>
         <ZIndex>4</ZIndex>
@@ -233,8 +233,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.15333in</Top>
-        <Left>5.39223in</Left>
+        <Top>1.25279in</Top>
+        <Left>5.44497in</Left>
         <Height>0.25in</Height>
         <Width>0.78334in</Width>
         <ZIndex>5</ZIndex>
@@ -255,16 +255,14 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>BIÊN NHẬN TRẢ GÓP</Value>
+                <Value>HỢP ĐỒNG CẦM ĐỒ</Value>
                 <Style>
                   <FontSize>20pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
           <Paragraph>
             <TextRuns>
@@ -280,10 +278,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.64916in</Top>
-        <Left>1.7639in</Left>
+        <Top>1.74862in</Top>
+        <Left>2.00885in</Left>
         <Height>0.40833in</Height>
-        <Width>3.05888in</Width>
+        <Width>2.85in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -319,8 +317,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.64444in</Top>
-        <Left>0.36944in</Left>
+        <Top>0.7439in</Top>
+        <Left>0.42218in</Left>
         <Height>0.55833in</Height>
         <Width>1.5in</Width>
         <ZIndex>7</ZIndex>
@@ -345,7 +343,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!Ten.Value, "DataSet1")</Value>
+                <Value>=First(Fields!Ten.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -362,8 +360,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.28389in</Top>
-        <Left>0.38109in</Left>
+        <Top>2.36946in</Top>
+        <Left>0.42218in</Left>
         <Height>0.23333in</Height>
         <Width>4.26167in</Width>
         <ZIndex>8</ZIndex>
@@ -384,7 +382,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Đại diện đến trả lãi</Value>
+                <Value>Đại diện đến cầm đồ</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -401,8 +399,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.27in</Top>
-        <Left>4.70055in</Left>
+        <Top>2.36946in</Top>
+        <Left>4.75329in</Left>
         <Height>0.23333in</Height>
         <Width>1.48667in</Width>
         <ZIndex>9</ZIndex>
@@ -427,7 +425,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!MaTraGop.Value, "DataSet3")</Value>
+                <Value>=First(Fields!MaPhieuCam.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -444,8 +442,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.27222in</Top>
-        <Left>0.36944in</Left>
+        <Top>1.37168in</Top>
+        <Left>0.42218in</Left>
         <Height>0.23333in</Height>
         <Width>1.5in</Width>
         <ZIndex>10</ZIndex>
@@ -470,7 +468,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!DiaChi.Value, "DataSet1")</Value>
+                <Value>=First(Fields!DiaChi.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -487,8 +485,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.57277in</Top>
-        <Left>1.9139in</Left>
+        <Top>2.67223in</Top>
+        <Left>1.96664in</Left>
         <Height>0.23333in</Height>
         <Width>4.26167in</Width>
         <ZIndex>11</ZIndex>
@@ -513,7 +511,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!GioiTinh.Value, "DataSet1")</Value>
+                <Value>=First(Fields!GioiTinh.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -530,8 +528,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.57277in</Top>
-        <Left>0.36944in</Left>
+        <Top>2.67223in</Top>
+        <Left>0.42218in</Left>
         <Height>0.23333in</Height>
         <Width>1.47501in</Width>
         <ZIndex>12</ZIndex>
@@ -556,7 +554,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!CMND.Value, "DataSet1")</Value>
+                <Value>=First(Fields!CMND.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -573,8 +571,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.87555in</Top>
-        <Left>0.39443in</Left>
+        <Top>2.97501in</Top>
+        <Left>0.44717in</Left>
         <Height>0.23333in</Height>
         <Width>1.47501in</Width>
         <ZIndex>13</ZIndex>
@@ -612,8 +610,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.87555in</Top>
-        <Left>1.95611in</Left>
+        <Top>2.97501in</Top>
+        <Left>2.00885in</Left>
         <Height>0.23333in</Height>
         <Width>1.24168in</Width>
         <ZIndex>14</ZIndex>
@@ -651,8 +649,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.87555in</Top>
-        <Left>3.2561in</Left>
+        <Top>2.97501in</Top>
+        <Left>3.30884in</Left>
         <Height>0.23333in</Height>
         <Width>0.90001in</Width>
         <ZIndex>15</ZIndex>
@@ -690,8 +688,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.87555in</Top>
-        <Left>4.22556in</Left>
+        <Top>2.97501in</Top>
+        <Left>4.2783in</Left>
         <Height>0.23333in</Height>
         <Width>0.88335in</Width>
         <ZIndex>16</ZIndex>
@@ -716,7 +714,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=First(Fields!NoiCap.Value, "DataSet1")</Value>
+                <Value>=First(Fields!NoiCap.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -733,8 +731,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.87555in</Top>
-        <Left>5.17835in</Left>
+        <Top>2.97501in</Top>
+        <Left>5.23109in</Left>
         <Height>0.23333in</Height>
         <Width>0.99722in</Width>
         <ZIndex>17</ZIndex>
@@ -755,7 +753,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Tôi đến để trả số tiền góp sau khi cầm những món đồ sau:</Value>
+                <Value>Tôi xin thỏa thuận sự tự nguyện đặt đồ vật, tài sản kê sau đây:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -772,417 +770,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.17832in</Top>
-        <Left>0.39443in</Left>
+        <Top>3.27778in</Top>
+        <Left>0.44717in</Left>
         <Height>0.23333in</Height>
         <Width>5.79279in</Width>
         <ZIndex>18</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox27">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Số tiền trả góp (viết bằng số):  </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Sum(Fields!SoTienKhachTra.Value, "DataSet3")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.69166in</Top>
-        <Left>0.42221in</Left>
-        <Height>0.23333in</Height>
-        <Width>3.42505in</Width>
-        <ZIndex>19</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox30">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Số tiền còn lại: </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Sum(Fields!SoTienDuNo.Value, "DataSet3")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.41666in</Top>
-        <Left>3.88892in</Left>
-        <Height>0.23333in</Height>
-        <Width>2.61108in</Width>
-        <ZIndex>20</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox32">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>ngày trả: </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=First(Fields!NgayTraGop.Value, "DataSet3")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.70556in</Top>
-        <Left>3.88892in</Left>
-        <Height>0.23333in</Height>
-        <Width>2.28665in</Width>
-        <ZIndex>21</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox26">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Nhân viên phụ trách</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!MaNV.Value, "DataSet3")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.84721in</Top>
-        <Left>0.39443in</Left>
-        <Height>0.4in</Height>
-        <Width>1.30001in</Width>
-        <ZIndex>22</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox34">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Người trả góp</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Ten.Value, "DataSet1")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.84721in</Top>
-        <Left>3.76444in</Left>
-        <Height>0.4in</Height>
-        <Width>2.41113in</Width>
-        <ZIndex>23</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox35">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Ngày </Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Day(Today())</Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.48887in</Top>
-        <Left>3.76444in</Left>
-        <Height>0.25in</Height>
-        <Width>0.70556in</Width>
-        <ZIndex>24</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox36">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>tháng </Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Month(Today())</Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.48887in</Top>
-        <Left>4.53945in</Left>
-        <Height>0.25in</Height>
-        <Width>0.78334in</Width>
-        <ZIndex>25</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox37">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>năm </Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Year(Today())</Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.48887in</Top>
-        <Left>5.39223in</Left>
-        <Height>0.25in</Height>
-        <Width>0.78334in</Width>
-        <ZIndex>26</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox29">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Số tiền cầm đồ (viết bằng số):  </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Sum(Fields!SoTienCam.Value, "DataSet2")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.12778in</Top>
-        <Left>0.41055in</Left>
-        <Height>0.23333in</Height>
-        <Width>3.42505in</Width>
-        <ZIndex>27</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox33">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>ngày cầm: </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=First(Fields!NgayCam.Value, "DataSet2")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.14168in</Top>
-        <Left>3.87727in</Left>
-        <Height>0.23333in</Height>
-        <Width>2.28665in</Width>
-        <ZIndex>28</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox31">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Với lãi suất tính theo tháng là: </Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=Sum(Fields!LaiSuat.Value, "DataSet2")</Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value> %/ tháng</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.41667in</Top>
-        <Left>0.41055in</Left>
-        <Height>0.23333in</Height>
-        <Width>3.42505in</Width>
-        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1496,35 +1088,26 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet4</DataSetName>
-        <Top>3.55834in</Top>
-        <Left>0.41055in</Left>
+        <DataSetName>DataSet3</DataSetName>
+        <Top>3.65779in</Top>
+        <Left>0.44717in</Left>
         <Height>0.5in</Height>
         <Width>5.79279in</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox21">
+      <Textbox Name="Textbox27">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Tôi xin cam đoan sẽ trả hết số tiền còn lại vào đúng Ngày hết hạn chuộc là ngày  . Nếu tôi không trở lại chuộc hàng, t chấp nhận sẽ mất số tiền góp và món hàng sẽ bị thanh lý . </Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
+                <Value>Tôi đã nhận đủ số tiền mà cửa hàng đã giao</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1532,11 +1115,347 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.00833in</Top>
-        <Left>0.42221in</Left>
-        <Height>0.41109in</Height>
+        <Top>4.22723in</Top>
+        <Left>0.44717in</Left>
+        <Height>0.23333in</Height>
         <Width>5.79279in</Width>
-        <ZIndex>31</ZIndex>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Số tiền (viết bằng số): </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=Sum(Fields!SoTienCam.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.51612in</Top>
+        <Left>0.44717in</Left>
+        <Height>0.23333in</Height>
+        <Width>5.79279in</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Thỏa thuận diễn ra từ ngày: </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!NgayCam.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.83278in</Top>
+        <Left>0.43552in</Left>
+        <Height>0.23333in</Height>
+        <Width>3.47612in</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>đến ngày: </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!NgayChuoc.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.83278in</Top>
+        <Left>3.95331in</Left>
+        <Height>0.23333in</Height>
+        <Width>2.28665in</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Hiệu cầm đồ được quyền quản lý, điều động khi cần thiết, khi hết hạn mà không có tiền chuộc lại, tôi đồng ý bán đồ vật cầm ngang bằng với số tiền tôi đã nhận của cửa hàng</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.13556in</Top>
+        <Left>0.44717in</Left>
+        <Height>0.38333in</Height>
+        <Width>5.79279in</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nhân viên phụ trách</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!MaNV.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.94667in</Top>
+        <Left>0.44717in</Left>
+        <Height>0.4in</Height>
+        <Width>1.30001in</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox34">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Người cầm đồ</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Ten.Value, "DataSet2")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.94667in</Top>
+        <Left>3.81718in</Left>
+        <Height>0.4in</Height>
+        <Width>2.41113in</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox35">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ngày</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Day(Today())</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.58833in</Top>
+        <Left>3.81718in</Left>
+        <Height>0.25in</Height>
+        <Width>0.70556in</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox36">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>tháng </Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Month(Today())</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.58833in</Top>
+        <Left>4.59219in</Left>
+        <Height>0.25in</Height>
+        <Width>0.78334in</Width>
+        <ZIndex>28</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox37">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>năm </Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Year(Today())</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>5.58833in</Top>
+        <Left>5.44497in</Left>
+        <Height>0.25in</Height>
+        <Width>0.78334in</Width>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1548,10 +1467,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>6.4111in</Height>
+    <Height>6.64945in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>7in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -1561,67 +1480,16 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="CamDoDataSet">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>32b469cb-cda8-45e3-94c4-0e0f11935993</rd:DataSourceID>
-    </DataSource>
     <DataSource Name="DataSetCamDo">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>e80cdfe5-be17-4693-83f2-f3e78cada9a5</rd:DataSourceID>
+      <rd:DataSourceID>a104ed50-7f78-4620-bcb6-1b6c6b83b588</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>DataSetCamDo</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="CMND">
-          <DataField>CMND</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Ten">
-          <DataField>Ten</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DiaChi">
-          <DataField>DiaChi</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SoDT">
-          <DataField>SoDT</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NgaySinh">
-          <DataField>NgaySinh</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="NoiCap">
-          <DataField>NoiCap</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="GioiTinh">
-          <DataField>GioiTinh</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DataSetCamDo</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\DataSetCamDo.xsd</rd:SchemaPath>
-        <rd:TableName>KhachHang</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>KhachHangTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSet2">
       <Query>
         <DataSourceName>DataSetCamDo</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1665,47 +1533,51 @@
         <rd:TableAdapterName>PhieuCamDoTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSet3">
+    <DataSet Name="DataSet2">
       <Query>
         <DataSourceName>DataSetCamDo</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="MaTraGop">
-          <DataField>MaTraGop</DataField>
+        <Field Name="CMND">
+          <DataField>CMND</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="NgayTraGop">
-          <DataField>NgayTraGop</DataField>
+        <Field Name="Ten">
+          <DataField>Ten</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DiaChi">
+          <DataField>DiaChi</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SoDT">
+          <DataField>SoDT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NgaySinh">
+          <DataField>NgaySinh</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="MaPhieuCam">
-          <DataField>MaPhieuCam</DataField>
+        <Field Name="NoiCap">
+          <DataField>NoiCap</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SoTienKhachTra">
-          <DataField>SoTienKhachTra</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SoTienDuNo">
-          <DataField>SoTienDuNo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="MaNV">
-          <DataField>MaNV</DataField>
+        <Field Name="GioiTinh">
+          <DataField>GioiTinh</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetCamDo</rd:DataSetName>
         <rd:SchemaPath>C:\Users\ngota\OneDrive\Documents\GitHub\OOAD-Project\TiemCamDo\TiemCamDo\DataSetCamDo.xsd</rd:SchemaPath>
-        <rd:TableName>PhieuTraGop</rd:TableName>
+        <rd:TableName>KhachHang</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PhieuTraGopTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>KhachHangTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSet4">
+    <DataSet Name="DataSet3">
       <Query>
         <DataSourceName>DataSetCamDo</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1747,5 +1619,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>690e803f-6c2e-47c7-87aa-f088d2c5c727</rd:ReportID>
+  <rd:ReportID>ff434e08-8809-4d48-812b-0480c91c619a</rd:ReportID>
 </Report>
