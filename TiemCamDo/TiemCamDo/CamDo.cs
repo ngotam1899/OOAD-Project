@@ -107,7 +107,7 @@ namespace TiemCamDo
                     {
                         if (BLMatHang.Instance.InsertMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                         {
-                            BLCamDo.Instance.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtLaiSuat.Text, txtSoTienCam.Text,  MaNV);
+                            BLCamDo.Instance.InsertCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value,  txtSoTienCam.Text, txtLaiSuat.Text,  MaNV);
                             // Load lại dữ liệu trên DataGridView     
                             dgvCamDo.DataSource = BLCamDo.Instance.GetCDByMaHang(txtMaHang.Text);
                             dgvMonHang.DataSource = BLMatHang.Instance.GetMHByCMND(txtCMND.Text);
@@ -135,7 +135,7 @@ namespace TiemCamDo
             }
             else
             {
-                if (BLCamDo.Instance.UpdateCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text,   MaNV)
+                if (BLCamDo.Instance.UpdateCD(txtMaPhieu.Text, txtMaHang.Text, dtpNgayCam.Value, dtpNgayChuoc.Value, txtSoTienCam.Text, txtLaiSuat.Text,MaNV)
                     && BLMatHang.Instance.UpdateMH(txtMaHang.Text, txtLoaiHang.Text, txtChiTiet.Text, txtGiaTri.Text, txtCMND.Text))
                 {
                     // Load lại dữ liệu trên DataGridView      

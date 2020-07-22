@@ -19,7 +19,7 @@ namespace TiemCamDo.DB_Layer
 
         private DBMain() { }
 
-        string ConnStr = @"Data Source=DESKTOP-GB9BOU0\SQLEXPRESS2012;" +
+        string ConnStr = @"Data Source=DESKTOP-UML28IP\SQLEXPRESS;" +
         "Initial Catalog=CamDo;" +
         "Integrated Security=True";
        public DataTable MyExecuteQuery(string query)

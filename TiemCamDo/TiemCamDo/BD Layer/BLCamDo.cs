@@ -74,7 +74,7 @@ namespace TiemCamDo.BD_Layer
         public bool InsertCD(string MaPhieu, string MaHang, DateTime NgayCam, DateTime NgayChuoc, string SoTienCam, string LaiSuat, string MaNV)
         {
             string sqlString =
-           string.Format("EXEC spInsertCamDo N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}'", MaPhieu, MaHang, NgayCam, NgayChuoc,  LaiSuat, SoTienCam, MaNV);
+           string.Format("EXEC spInsertCamDo N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}'", MaPhieu, MaHang, NgayCam, NgayChuoc, SoTienCam,  LaiSuat, MaNV);
             int result = DBMain.Instance.MyExecuteNonQuery(sqlString);
             return result > 0;
         }
